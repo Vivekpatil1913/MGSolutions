@@ -33,7 +33,6 @@ const Header = () => {
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav className="gov-nav mx-auto">
-
               <Nav.Link as={NavLink} to="/" end>
                 Home
               </Nav.Link>
@@ -45,22 +44,26 @@ const Header = () => {
               <NavDropdown
                 title={
                   <span>
-                    Industrial Subsidy <FiChevronDown className="dropdown-icon" />
+                    Industrial Subsidy{" "}
+                    <FiChevronDown className="dropdown-icon" />
                   </span>
                 }
                 id="industrial-dropdown"
               >
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/industrial-state-subsidy"
-                >
+                <NavDropdown.Item as={NavLink} to="/industrial-state-subsidy">
                   State Government Subsidy
                 </NavDropdown.Item>
 
                 <NavDropdown
                   title={
-                    <span>
-                      Central Government Subsidy{" "}
+                    <span className="central-title">
+                      <NavLink
+                        to="/govt-subsidy"
+                        className="dropdown-link"
+                        // onClick={(e) => e.stopPropagation()}
+                      >
+                        Central Government Subsidy
+                      </NavLink>
                       <FiChevronDown className="dropdown-icon" />
                     </span>
                   }
@@ -74,13 +77,11 @@ const Header = () => {
                     Production Linked Incentives (PLI) Scheme
                   </NavDropdown.Item>
 
-                  <NavDropdown.Item
-                    as={NavLink}
-                    to="/detailed-project-report"
-                  >
+                  <NavDropdown.Item as={NavLink} to="/detailed-project-report">
                     Detailed Project Report (DPR) For Bank Loan
                   </NavDropdown.Item>
                 </NavDropdown>
+                {/* 👆 END OF CHANGE */}
               </NavDropdown>
 
               <Nav.Link as={NavLink} to="/invest-in-india">
@@ -94,7 +95,6 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/disclaimer">
                 Disclaimers
               </Nav.Link>
-
             </Nav>
           </Navbar.Collapse>
         </Container>

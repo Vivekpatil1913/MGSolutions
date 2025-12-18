@@ -255,3 +255,26 @@
   justify-content: center;  /* vertical centering */
   align-items: center;      /* horizontal centering */
 }
+
+/* Existing styles... */
+
+/* Styled Link as Button */
+.about-ct {
+  display: inline-block;
+  padding: 14px 34px;
+  background: linear-gradient(135deg, #89C54B, #3D63AA);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 40px;
+  text-decoration: none; /* remove underline */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.about-ct:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(61, 99, 170, 0.3);
+  color: #fff;
+}

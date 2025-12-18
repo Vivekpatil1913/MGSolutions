@@ -1,0 +1,92 @@
+/* ===== Section Wrapper ===== */
+.industrial-subsidy {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    #3d63aa 0%,
+    #3d63aa 40%,
+    #89c54b 100%
+  );
+}
+
+/* ===== Container ===== */
+.subsidy-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== Title ===== */
+.subsidy-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+.subsidy-title span {
+  color: #89c54b;
+}
+
+/* ===== Content Card ===== */
+.subsidy-card {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 18px;
+  border-left: 8px solid #3d63aa;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.subsidy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Text Styling ===== */
+.subsidy-card p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Highlight line */
+.highlight-text {
+  font-weight: 600;
+  color: #3d63aa;
+  background: rgba(137, 197, 75, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .industrial-subsidy {
+    padding: 60px 15px;
+  }
+
+  .subsidy-title {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .subsidy-card {
+    padding: 30px 25px;
+  }
+
+  .subsidy-card p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subsidy-title {
+    font-size: 26px;
+  }
+
+  .subsidy-card {
+    padding: 25px 20px;
+  }
+}

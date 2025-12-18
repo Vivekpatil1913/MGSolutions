@@ -1,0 +1,150 @@
+/* SECTION */
+.industrial-subsidy {
+  padding: 80px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 99, 170, 0.04),
+    rgba(137, 197, 75, 0.05)
+  );
+  color: #000000;
+}
+
+/* CONTAINER */
+.industrial-subsidy .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* HEADER */
+.subsidy-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subsidy-badge {
+  display: inline-block;
+  background: #89C54B;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.subsidy-header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #3D63AA;
+  margin-bottom: 16px;
+}
+
+.subsidy-header p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000000;
+}
+
+/* BUTTON */
+.eligibility-btn {
+  margin-top: 26px;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #3D63AA, #89C54B);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eligibility-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* GRID */
+.subsidy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.subsidy-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 34px 30px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #3D63AA;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subsidy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.16);
+  border-left-color: #89C54B;
+}
+
+.subsidy-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3D63AA;
+  margin-bottom: 18px;
+}
+
+/* LIST */
+.subsidy-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subsidy-card ul li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.subsidy-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #89C54B;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .subsidy-header h1 {
+    font-size: 34px;
+  }
+
+  .subsidy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .industrial-subsidy {
+    padding: 60px 0;
+  }
+
+  .subsidy-header h1 {
+    font-size: 28px;
+  }
+
+  .subsidy-header p {
+    font-size: 15px;
+  }
+
+  .subsidy-card {
+    padding: 26px 22px;
+  }
+}

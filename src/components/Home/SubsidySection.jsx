@@ -8,10 +8,8 @@ const SubsidySection = () => {
     <section className="subsidy-section">
       <Container>
         <Row className="align-items-center gy-5">
-
           {/* LEFT CONTENT */}
           <Col lg={6} className="content-col">
-            
             <h2 className="section-title">
               Looking for subsidy for your <span>business?</span>
             </h2>
@@ -30,7 +28,6 @@ const SubsidySection = () => {
               policies. Simplify the journey to financial assistance and growth
               with our trusted subsidy solutions.
             </p>
-
           </Col>
 
           {/* RIGHT VIDEO */}
@@ -38,14 +35,15 @@ const SubsidySection = () => {
             <div className="video-wrapper">
               <div className="ratio ratio-16x9">
                 <iframe
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  title="Subsidy4India Video"
+                  src="https://www.youtube.com/embed/-BLZgI2K8oI?si=Ge1reA0daBAuEOb3"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
             </div>
           </Col>
-
         </Row>
       </Container>
     </section>

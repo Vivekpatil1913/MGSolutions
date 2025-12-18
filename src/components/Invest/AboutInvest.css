@@ -1,0 +1,278 @@
+.about-invest {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 40px; /* smaller gap for responsiveness */
+}
+
+.text-section {
+  flex: 1 1 500px; /* grow and shrink */
+  min-width: 280px;
+
+}
+
+.text-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #3D63AA;
+}
+
+.text-section .highlight {
+  color: #89C54B;
+  font-weight: 600;
+}
+
+.text-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.text-section .italic-highlight {
+  font-style: italic;
+  background: #f0f7ed;
+  padding: 10px 15px;
+  border-left: 4px solid #89C54B;
+  border-radius: 5px;
+}
+
+/* Logo card styling */
+.logo-card {
+  flex: 1 1 300px; /* grow/shrink */
+  max-width: 360px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  padding: 30px 20px 20px;
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
+  
+}
+
+.logo-card img {
+  width: 80%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.logo-card h3 {
+  font-size: 1.3rem;
+  color: #3D63AA;
+  margin-bottom: 5px;
+}
+
+.logo-card .subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.logo-card .color-dots span {
+  display: inline-block;
+  width: 20px;
+  height: 5px;
+  border-radius: 3px;
+  margin: 0 3px;
+}
+
+.logo-card .color-dots .blue { background: #3D63AA; }
+.logo-card .color-dots .green { background: #89C54B; }
+.logo-card .color-dots .black { background: #000; }
+
+/* Responsive breakpoints */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .text-section h2 {
+    font-size: 2rem;
+  }
+
+  .logo-card {
+    margin-top: 30px;
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Large mobile devices */
+@media (max-width: 768px) {
+  .text-section p {
+    font-size: 1rem;
+  }
+
+  .text-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .logo-card {
+    width: 90%;
+    padding: 25px 15px 20px;
+  }
+
+  .logo-card img {
+    width: 70%;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .about-invest {
+    padding: 40px 15px;
+  }
+
+  .text-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-section p {
+    font-size: 0.95rem;
+  }
+
+  .logo-card {
+    width: 95%;
+    padding: 20px 10px 15px;
+    margin-top: 20px;
+  }
+
+  .logo-card img {
+    width: 60%;
+  }
+
+  .logo-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .logo-card .subtext {
+    font-size: 0.85rem;
+  }
+}
+
+/* LEFT CONTENT – VISUAL ENHANCEMENT (SAFE OVERRIDES) */
+
+.text-section h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1f3b73;
+  line-height: 1.2;
+}
+
+.text-section h2 .highlight {
+  background: linear-gradient(90deg, #3D63AA, #89C54B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.text-section h2 .highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3D63AA, #89C54B);
+  border-radius: 3px;
+}
+
+/* Paragraph styling like screenshot */
+.text-section p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.9;
+}
+
+/* Inline highlights */
+.text-section .highlight {
+  color: #3D63AA;
+  font-weight: 600;
+}
+
+/* Callout box (Make in India line) */
+.text-section .italic-highlight {
+  margin-top: 20px;
+  font-style: italic;
+  background: linear-gradient(
+    90deg,
+    rgba(137, 197, 75, 0.12),
+    rgba(61, 99, 170, 0.08)
+  );
+  padding: 14px 18px;
+  border-left: 5px solid #89C54B;
+  border-radius: 8px;
+  color: #2c2c2c;
+}
+
+/* Tablet fine-tuning */
+@media (max-width: 768px) {
+  .text-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 480px) {
+  .text-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .text-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Animated underline for Invest in India */
+
+.text-section h2 .highlight {
+  background: linear-gradient(90deg, #3D63AA, #89C54B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+/* underline */
+.text-section h2 .highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3D63AA, #89C54B);
+  border-radius: 4px;
+
+  /* animation */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineGrow 1.1s ease-out forwards;
+}
+
+/* keyframes */
+@keyframes underlineGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

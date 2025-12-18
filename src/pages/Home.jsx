@@ -22,7 +22,6 @@ const Home = () => {
       <HomeCarousel />
       <SubsidySection />
       <SubsidyCards />
-      <FaqSection />
       <SubsidyProcess />
       <AboutWhyUs />
       <Founder />

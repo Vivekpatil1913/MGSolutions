@@ -1,68 +1,63 @@
 .clients-section {
-  padding: 10px 0;
-  padding-bottom: 60px;
-  background: #ffffff;
-}
-
-/* TITLE */
-.clients-title {
-  text-align: center;
-  font-size: 38px;
-  font-weight: 700;
-  color: #3D63AA;
-  margin-bottom: 50px;
+  padding: 20px 0 60px 0;
+  background: #fff;
   position: relative;
 }
 
-.clients-title::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: #89C54B;
-  display: block;
-  margin: 12px auto 0;
-  border-radius: 2px;
+.clients-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #3D63AA;
+  margin-bottom: 40px;
 }
 
-/* LOGO WRAPPER */
 .client-logo-wrap {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .client-logo-wrap img {
-  max-width: 150px;
-  max-height: 90px;
+  max-width: 140px;
+  max-height: 80px;
   object-fit: contain;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
-/* HOVER EFFECT */
 .client-logo-wrap img:hover {
-  transform: translateY(-6px) scale(1.08);
+  transform: scale(1.05);
 }
 
-/* DOTS */
-.slick-dots li button:before {
-  font-size: 6px;
-  color: #89C54B;
-  opacity: 0.4;
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3D63AA;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.slick-dots li.slick-active button:before {
-  color: #3D63AA;
-  opacity: 1;
+.arrow:hover {
+  background: #89C54B;
+  color: #000;
+  transform: scale(1.1);
 }
 
-/* MOBILE */
-@media (max-width: 576px) {
-  .clients-title {
-    font-size: 28px;
-  }
+.arrow.prev { left: -20px; }
+.arrow.next { right: -20px; }
 
-  .client-logo-wrap img {
-    max-width: 130px;
-  }
-}
+/* Responsive */
+@media (max-width: 1200px) { .arrow { width: 30px; height: 30px; font-size: 18px; } }
+@media (max-width: 768px)  { .arrow { width: 28px; height: 28px; font-size: 16px; } }
+@media (max-width: 576px)  { .arrow { width: 25px; height: 25px; font-size: 14px; } }

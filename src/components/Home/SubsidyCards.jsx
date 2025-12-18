@@ -2,8 +2,11 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { BsFillBuildingFill, BsGraphUp } from "react-icons/bs";
 import "./SubsidyCards.css";
+import { useNavigate } from "react-router-dom";
 
 const SubsidyCards = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="subsidy-focus">
       <Container>
@@ -21,7 +24,10 @@ const SubsidyCards = () => {
                 provided by governments to promote and sustain the growth of
                 specific industries within India.
               </p>
-              <Button className="focus-btn">
+             <Button
+                className="focus-btnn"
+                onClick={() => navigate("/industrial-subsidy")}
+              >
                 Explore Details
                 <span className="arrow">→</span>
               </Button>
@@ -42,7 +48,10 @@ const SubsidyCards = () => {
                 production and generate employment.
               </p>
 
-              <Button className="focus-btn">
+              <Button
+                className="focus-btnn"
+                onClick={() => navigate("/invest-in-india")}
+              >
                 Explore Details
                 <span className="arrow">→</span>
               </Button>

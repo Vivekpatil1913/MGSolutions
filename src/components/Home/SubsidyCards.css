@@ -59,7 +59,7 @@
 }
 
 /* CTA BUTTON */
-.focus-btn {
+.focus-btnn {
   background: transparent !important;
   border: none !important;
   padding: 0;
@@ -73,10 +73,11 @@
   cursor: pointer;
   position: relative;
   transition: color 0.3s ease;
+ 
 }
 
 /* underline animation */
-.focus-btn::after {
+.focus-btnn::after {
   content: "";
   position: absolute;
   left: 0;
@@ -88,27 +89,25 @@
 }
 
 /* arrow */
-.focus-btn .arrow {
-  font-size: 18px;
+.focus-btnn .arrow {
+  font-size: 20px;
   transition: transform 0.35s ease;
+ 
 }
 
 /* hover */
-.focus-btn:hover {
+.focus-btnn:hover {
   color: #89C54B !important;
 }
 
-.focus-btn:hover::after {
+.focus-btnn:hover::after {
   width: 100%;
 }
 
-.focus-btn:hover .arrow {
-  transform: translateX(6px);
-}
 
 /* remove bootstrap focus styles */
-.focus-btn:focus,
-.focus-btn:active {
+.focus-btnn:focus,
+.focus-btnn:active {
   box-shadow: none !important;
   outline: none !important;
 }
@@ -150,7 +149,7 @@
     font-size: 14px;
   }
 
-  .focus-btn {
+  .focus-btnn {
     font-size: 16px !important;
   }
 }
@@ -174,3 +173,13 @@
 }
 
 
+/* Disable arrow hover animation */
+.focus-btnn .arrow {
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Prevent arrow movement on hover */
+.focus-btnn:hover .arrow {
+  transform: none !important;
+}

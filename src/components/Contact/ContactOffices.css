@@ -1,204 +1,36 @@
 .contact-luxury {
-  padding: 120px 0;
-  background: linear-gradient(135deg, #0e1b33, #000000);
-  color: #ffffff;
+  padding: 50px 0;
+  background: #f5f7fa;
+  color: #000000;
 }
 
 /* Header */
 .lux-header {
   text-align: center;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .lux-header h1 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 800;
-  margin-bottom: 15px;
+  color: #3D63AA;
+  margin-bottom: 10px;
 }
 
 .lux-header p {
   font-size: 18px;
-  color: #cfd6e6;
+  color: #555;
 }
 
-/* Row */
-.lux-row {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: center;
-  margin-bottom: 120px;
-}
-
-/* Info */
-.lux-info {
-  position: relative;
-}
-
-.lux-number {
-  font-size: 90px;
-  font-weight: 800;
-  color: rgba(137, 197, 75, 0.15);
-  position: absolute;
-  top: -50px;
-  left: -20px;
-}
-
-.lux-info h2 {
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #89C54B;
-}
-
-.lux-info p {
-  font-size: 17px;
-  line-height: 1.8;
-  margin-bottom: 12px;
-}
-
-/* Map */
-.lux-map {
-  position: relative;
-  height: 340px;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 35px 80px rgba(0,0,0,0.5);
-}
-
-.lux-map iframe {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(100%) contrast(1.2);
-}
-
-.map-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(61,99,170,0.55),
-    rgba(0,0,0,0.6)
-  );
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .lux-row {
-    grid-template-columns: 1fr;
-  }
-
-  .lux-number {
-    font-size: 70px;
-    top: -40px;
-  }
-}
-
-@media (max-width: 576px) {
-  .lux-header h1 {
-    font-size: 34px;
-  }
-
-  .lux-map {
-    height: 260px;
-  }
-}
-
-/* Appointment CTA Wrapper */
-.appointment-cta {
-  text-align: center;
-  margin-top: 120px;
-}
-
-/* Button */
-.appointment-btn {
-  position: relative;
-  display: inline-block;
-  padding: 18px 55px;
-  font-size: 18px;
-  font-weight: 700;
-  color: #000000;
-  background: linear-gradient(135deg, #89C54B, #a6e06c);
-  border-radius: 50px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 15px 40px rgba(137, 197, 75, 0.4);
-}
-
-/* Hover lift */
-.appointment-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 25px 60px rgba(137, 197, 75, 0.6);
-}
-
-/* Glow animation layer */
-.btn-glow {
-  position: absolute;
-  inset: -2px;
-  border-radius: 50px;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.7),
-    transparent
-  );
-  animation: glowMove 2.5s linear infinite;
-}
-
-/* Pulse effect */
-.appointment-btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50px;
-  box-shadow: 0 0 0 0 rgba(137, 197, 75, 0.7);
-  animation: pulse 2.5s infinite;
-}
-
-/* Animations */
-@keyframes glowMove {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(137, 197, 75, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(137, 197, 75, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(137, 197, 75, 0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-  .appointment-btn {
-    padding: 16px 40px;
-    font-size: 16px;
-  }
-}
-
-/* Office Row */
+/* Office Rows */
 .office-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
-.office-row.reverse {
-  direction: rtl;
-}
-
-.office-row.reverse > * {
-  direction: ltr;
-}
-
-/* Content */
 .office-content {
   position: relative;
   padding-left: 20px;
@@ -207,9 +39,9 @@
 .office-index {
   font-size: 88px;
   font-weight: 800;
-  color: rgba(61, 99, 170, 0.12);
+  color: rgba(137, 197, 75, 0.1);
   position: absolute;
-  top: -50px;
+  top: -30px;
   left: -10px;
 }
 
@@ -220,70 +52,129 @@
 }
 
 .office-address {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #000000;
-  max-width: 520px;
-  margin-bottom: 25px;
-}
-
-/* Meta info */
-.office-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .office-meta span {
-  font-size: 15px;
-  color: #333;
+  font-size: 16px;
+  color: #000;
 }
 
 /* Map */
 .office-map {
   height: 320px;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .office-map:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 45px 90px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.25);
 }
 
 .office-map iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  filter: grayscale(40%) contrast(1.1);
 }
 
-/* Accent border */
+/* Accent Border */
 .office-map::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 22px;
-  border: 2px solid rgba(137, 197, 75, 0.6);
+  border-radius: 20px;
+  border: 2px solid #89C54B;
   pointer-events: none;
+}
+
+/* Appointment CTA */
+.appointment-cta {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.appointment-btn {
+  position: relative;
+  display: inline-block;
+  padding: 16px 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #3D63AA, #89C54B);
+  border-radius: 50px;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointment-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.btn-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  animation: glowMove 2.5s linear infinite;
+}
+
+/* Animations */
+@keyframes glowMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Responsive */
 @media (max-width: 992px) {
+  .office-row {
+    grid-template-columns: 1fr;
+  }
+  .office-index { font-size: 64px; top: -20px; }
+  .office-map { height: 260px; }
+}
+
+@media (max-width: 576px) {
+  .lux-header h1 { font-size: 28px; }
+  .appointment-btn { padding: 14px 40px; font-size: 16px; }
+}
+
+.office-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.office-row.reverse {
+  direction: rtl;
+}
+
+.office-row.reverse > * {
+  direction: ltr;
+}
+
+/* Mobile */
+@media (max-width: 992px) {
   .office-row,
   .office-row.reverse {
     grid-template-columns: 1fr;
-    direction: ltr;
-  }
-
-  .office-index {
-    font-size: 64px;
-    top: -40px;
-  }
-
-  .office-map {
-    height: 260px;
+    direction: ltr; /* override reverse for small screens */
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { BsPeopleFill, BsBuilding, BsAward } from "react-icons/bs";
+import { Link } from "react-router-dom"; // ✅ import Link
 import "./AboutIntro.css";
 
 const AboutIntro = () => {
@@ -66,7 +67,10 @@ const AboutIntro = () => {
               Subsidy4India
             </p>
 
-            <Button className="about-ct">Contact Us Now</Button>
+            {/* ✅ Use Link instead of Button */}
+            <Link to="/contact" className="about-ct">
+              Contact Us Now
+            </Link>
           </Col>
 
           {/* RIGHT HIGHLIGHTS */}

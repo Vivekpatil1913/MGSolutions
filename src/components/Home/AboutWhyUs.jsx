@@ -11,8 +11,26 @@ import {
   BsPeople,
 } from "react-icons/bs";
 import "./AboutWhyUs.css";
+import { useNavigate } from "react-router-dom";
 
 const AboutWhyUs = () => {
+    const navigate = useNavigate();
+
+  const handleGetInTouch = () => {
+    navigate("/contact"); // 1. Navigate to contact page
+  };
+
+  const handleBookAppointment = () => {
+    window.open(
+      "https://calendar.google.com/calendar/r/eventedit", // 2. Open Google Calendar
+      "_blank"
+    );
+  };
+
+  const handleCheckEligibility = () => {
+    navigate("/2-minutes-subsidy-eligibility"); // 3. Navigate to eligibility page
+  };
+
   return (
     <section className="about-modern">
       <Container>
@@ -56,7 +74,9 @@ const AboutWhyUs = () => {
               <strong>It’s as simple as lifting a fork, literally!</strong>
             </p>
 
-            <Button className="gold-btn">Get in Touch</Button>
+             <Button className="gold-btn" onClick={handleGetInTouch}>
+              Get in Touch
+            </Button>
           </Col>
 
           {/* WHY US */}
@@ -107,8 +127,12 @@ const AboutWhyUs = () => {
 
         {/* CTA */}
         <div className="about-cta">
-          <Button className="dark-btn">Book an Appointment Now</Button>
-          <Button className="outline-gold-btn">Check Your Eligibility</Button>
+           <Button className="dark-btn" onClick={handleBookAppointment}>
+            Book an Appointment Now
+          </Button>
+          <Button className="outline-gold-btn" onClick={handleCheckEligibility}>
+            Check Your Eligibility
+          </Button>
         </div>
       </Container>
     </section>
