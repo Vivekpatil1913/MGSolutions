@@ -1,0 +1,229 @@
+.subsidy-process {
+  padding: 30px 0;
+  background: #ffffff;
+}
+
+/* TITLE */
+.process-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 90px;
+  color: #3D63AA;
+
+}
+
+/* FLOW GRID */
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px 15px;
+  position: relative;
+}
+
+/* CONNECTING LINE */
+.process-flow::before {
+  content: "";
+  position: absolute;
+  top: 46%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #89C54B, #3D63AA);
+  transition: width 1.2s ease;
+}
+
+.process-flow.animate::before {
+  width: 100%;
+}
+
+/* STEP */
+.flow-step {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.process-flow.animate .flow-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flow-step.top {
+  margin-bottom: 60px;
+}
+
+.flow-step.bottom {
+  margin-top: 40px;
+}
+
+/* NUMBER BOX */
+.flow-number {
+  width: 64px;
+  height: 64px;
+ background: linear-gradient(135deg, #89C54B, #3D63AA);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 2px 4px rgba(61, 99, 170, 0.35);
+
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLES */
+.flow-step h5 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+/* TEXT */
+.flow-step p {
+  font-size: 14px;
+  font-weight:400;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .process-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+
+  .process-flow::before {
+    display: none;
+  }
+  .flow-step {
+    background: #ffffff;
+    padding: 28px 24px;
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  }
+
+
+  .flow-step.top,
+  .flow-step.bottom {
+    margin: 0;
+  }
+}
+
+/* ===== MOBILE VIEW RE-DESIGN ===== */
+@media (max-width: 576px) {
+  .subsidy-process {
+    padding: 60px 0;
+  }
+
+  .process-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .process-flow {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    position: relative;
+    padding-left: 35px;
+  }
+
+  /* Vertical line */
+  .process-flow::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #89C54B, #3D63AA);
+
+  }
+
+  .flow-step {
+    text-align: left;
+    background: #ffffff;
+    padding: 20px 20px 20px 35px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Number circle */
+  .flow-number {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+    position: absolute;
+    left: -35px;
+    top: 20px;
+    border-radius: 50%;
+    
+  }
+
+  .flow-step h5 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .flow-step p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Remove top/bottom offsets */
+  .flow-step.top,
+  .flow-step.bottom {
+    margin: 0;
+  }
+}
+
+/* 🔥 REMOVE BOOTSTRAP BLUE OUTLINE / BORDER */
+button,
+button:focus,
+button:focus-visible,
+button:active,
+.btn,
+.btn:focus,
+.btn:focus-visible,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* ARROW BETWEEN STEPS (DESKTOP) */
+.flow-step::after {
+  content: "➜";
+  position: absolute;
+  top: 25px;
+  right: -22px;
+  font-size: 22px;
+  color: #89C54B;
+  opacity: 0.9;
+}
+
+/* Remove arrow from last item */
+.flow-step:nth-child(5)::after,
+.flow-step:nth-child(10)::after {
+  display: none;
+}
+
+/* Remove arrows on mobile */
+@media (max-width: 576px) {
+  .flow-step::after {
+    display: none;
+  }
+}

@@ -1,0 +1,126 @@
+.subsidy-section {
+  padding: 70px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 99, 170, 0.04),
+    rgba(137, 197, 75, 0.06)
+  );
+}
+
+/* Badge */
+.subsidy-section .section-badge {
+  display: inline-block;
+  background: #fff3cd;
+  color: #b45309;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.subsidy-section .section-title {
+  font-size: 38px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 22px;
+  line-height: 1.2;
+  text-align: start;
+}
+
+.subsidy-section .section-title span {
+  color: #3D63AA;
+  padding-top: 8px;
+}
+
+/* Description */
+.subsidy-section .section-desc {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #000000;
+  margin-bottom: 18px;
+}
+
+/* Highlights */
+.subsidy-section .highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.subsidy-section .highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.subsidy-section .highlight-list svg {
+  /* color: #f59e0b; */
+  font-size: 18px;
+}
+
+/* CTA */
+.subsidy-section .cta-buttons {
+  margin-top: 30px;
+}
+
+.subsidy-section .primary-btn {
+  background: linear-gradient(135deg, #3D63AA, #89C54B);
+  border: none;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  display: inline-flex;
+  color: #ffffff;
+  align-items: center;
+  gap: 10px;
+}
+
+.subsidy-section .primary-btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* Video */
+.subsidy-section .video-wrapper {
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.subsidy-section .video-wrapper {
+  padding: 30px;
+  padding-top: 5px;
+  border-radius: 20px;
+  transform: scale(1.06);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .subsidy-section .section-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .subsidy-section {
+    padding: 60px 0;
+  }
+
+  .subsidy-section .section-title {
+    font-size: 26px;
+  }
+
+  .subsidy-section .section-desc {
+    font-size: 16px;
+  }
+
+  .subsidy-section .primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

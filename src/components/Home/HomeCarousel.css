@@ -1,0 +1,20 @@
+.home-carousel img {
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Arrow icons visible & clean */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 45px;
+  height: 45px;
+  background-size: 100%;
+}
+
+/* Indicators (dots) */
+.carousel-indicators [data-bs-target] {
+  background-color: #f4b400;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
