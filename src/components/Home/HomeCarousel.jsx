@@ -20,15 +20,13 @@ const HomeCarousel = () => {
       {[banner1, banner2, banner3].map((banner, index) => (
         <Carousel.Item key={index}>
           <div className="carousel-image-wrapper">
-            <img className="d-block w-100" src={banner} alt={`Slide ${index + 1}`} />
+            <img
+              className="d-block w-100"
+              src={banner}
+              alt={`Slide ${index + 1}`}
+            />
 
-            {/* Know More Button */}
-            <button
-              className="carousel-know-more"
-              onClick={() => navigate("/2-minutes-subsidy-eligibility")}
-            >
-              Know More
-            </button>
+           
           </div>
         </Carousel.Item>
       ))}

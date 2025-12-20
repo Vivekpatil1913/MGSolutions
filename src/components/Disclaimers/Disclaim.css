@@ -1,5 +1,5 @@
 .disclaimers-section {
-  padding: 60px 0;
+  padding: 50px 0;
   background: linear-gradient(135deg, #f0f4ff, #f7fff0);
   position: relative;
   overflow: hidden;
@@ -47,7 +47,7 @@
   flex: 0 0 320px;
   background: #fff;
   padding: 30px 25px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   /* box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1); */
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -106,3 +106,71 @@
     margin-bottom: 30px;
   }
 }
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background:#3d63aa;
+  color: #fff;
+  font-size: 28px;
+  border: none;
+  /* border-radius: 50%; */
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(61,99,170,0.4);
+}
+
+/* Left & Right positioning */
+.carousel-arrow.left {
+  left: -25px;
+}
+
+.carousel-arrow.right {
+  right: -25px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .carousel-arrow.left {
+    left: -15px;
+  }
+
+  .carousel-arrow.right {
+    right: -15px;
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /* IMPORTANT */
+  padding: 0 60px;   /* creates space for arrows */
+}
+

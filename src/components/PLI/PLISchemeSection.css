@@ -41,12 +41,13 @@
   font-size: 18px;
   line-height: 1.9;
   color: #000;
+  text-align: justify;
 }
 
 /* ===== Right Image ===== */
 .pli-right img {
   width: 100%;
-  border-radius: 24px;
+  /* border-radius: 24px; */
   box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.3);
@@ -67,6 +68,7 @@
   padding: 45px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
   border-left: 6px solid #3d63aa;
+  text-align: justify;
 }
 
 .pli-info-card ul {
@@ -78,6 +80,7 @@
   line-height: 1.8;
   color: #000;
   margin-bottom: 16px;
+  text-align: justify;
 }
 
 .pli-info-card h4 {
@@ -85,6 +88,7 @@
   font-weight: 600;
   color: #3d63aa;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 /* ===== Contact ===== */

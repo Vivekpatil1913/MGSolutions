@@ -1,6 +1,7 @@
 .about-invest {
   background: #f9f9f9;
   padding: 60px 20px;
+ 
   font-family: 'Poppins', sans-serif;
   color: #000;
 }
@@ -274,5 +275,64 @@
   }
   to {
     transform: scaleX(1);
+  }
+}
+
+/* AboutInvest.css */
+
+.about-invest {
+  padding: 60px 10px;
+  background-color: #f9f9f9; /* optional */
+  text-align: justify;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* for responsiveness */
+  gap: 50px;
+  align-items: stretch; /* makes children equal height */
+}
+
+.text-section {
+  flex: 1 1 500px; /* take available space, minimum 500px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-card {
+  flex: 1 1 300px; /* take available space, minimum 300px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content */
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo-card img {
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+.color-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.color-dots .blue { background: #3D63AA; width: 12px; height: 12px; border-radius: 50%; }
+.color-dots .green { background: #89C54B; width: 12px; height: 12px; border-radius: 50%; }
+.color-dots .black { background: #000000; width: 12px; height: 12px; border-radius: 50%; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .logo-card {
+    width: 100%;
   }
 }

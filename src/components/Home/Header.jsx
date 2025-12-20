@@ -1,11 +1,26 @@
 import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FiPhoneCall, FiMail, FiChevronDown } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
 import logo from "../../assets/MAIN MG Solutions Logo 1..png";
 import "./Header.css";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const handleSubmenuToggle = (e) => {
+    if (window.innerWidth <= 991) {
+      e.preventDefault();
+      const parent = e.currentTarget.parentNode;
+      parent.classList.toggle("show");
+    }
+  };
+
+  const location = useLocation();
+  const isIndustrialActive =
+    location.pathname.startsWith("/industrial") ||
+    location.pathname.startsWith("/govt-subsidy") ||
+    location.pathname.startsWith("/production-linked-incentives") ||
+    location.pathname.startsWith("/detailed-project-report");
+
   return (
     <header className="gov-header">
       <div className="gov-topbar">
@@ -42,46 +57,51 @@ const Header = () => {
               </Nav.Link>
 
               <NavDropdown
+                id="industrial-dropdown"
+                className={isIndustrialActive ? "active" : ""}
                 title={
-                  <span>
+                  <span
+                    className={
+                      isIndustrialActive ? "nav-link active" : "nav-link"
+                    }
+                  >
                     Industrial Subsidy{" "}
                     <FiChevronDown className="dropdown-icon" />
                   </span>
                 }
-                id="industrial-dropdown"
               >
                 <NavDropdown.Item as={NavLink} to="/industrial-state-subsidy">
                   State Government Subsidy
                 </NavDropdown.Item>
 
-                <NavDropdown
-                  title={
-                    <span className="central-title">
-                      <NavLink
-                        to="/govt-subsidy"
-                        className="dropdown-link"
-                        // onClick={(e) => e.stopPropagation()}
-                      >
-                        Central Government Subsidy
-                      </NavLink>
-                      <FiChevronDown className="dropdown-icon" />
-                    </span>
-                  }
-                  id="central-dropdown"
-                  drop="end"
-                >
-                  <NavDropdown.Item
-                    as={NavLink}
-                    to="/production-linked-incentives"
-                  >
-                    Production Linked Incentives (PLI) Scheme
-                  </NavDropdown.Item>
+                <NavDropdown.Divider />
 
-                  <NavDropdown.Item as={NavLink} to="/detailed-project-report">
-                    Detailed Project Report (DPR) For Bank Loan
-                  </NavDropdown.Item>
-                </NavDropdown>
-                {/* 👆 END OF CHANGE */}
+                <div className="dropdown-submenu">
+                  <NavLink
+                    to="/govt-subsidy"
+                    className="dropdown-item submenu-title"
+                    onClick={handleSubmenuToggle} // <-- add this
+                  >
+                    Central Government Subsidy
+                    <FiChevronDown className="submenu-arrow" />
+                  </NavLink>
+
+                  <div className="dropdown-menu submenu-menu">
+                    <NavLink
+                      to="/production-linked-incentives"
+                      className="dropdown-item"
+                    >
+                      Production Linked Incentives (PLI) Scheme
+                    </NavLink>
+
+                    <NavLink
+                      to="/detailed-project-report"
+                      className="dropdown-item"
+                    >
+                      Detailed Project Report (DPR) For Bank Loan
+                    </NavLink>
+                  </div>
+                </div>
               </NavDropdown>
 
               <Nav.Link as={NavLink} to="/invest-in-india">

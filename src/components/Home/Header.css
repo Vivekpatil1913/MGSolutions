@@ -35,10 +35,12 @@
   align-items: center;
   gap: 12px;
   padding-left: 50px;
+
 }
 
 .gov-brand img {
   height: 64px;
+  margin-left: 20px;
 }
 
 .gov-brand h6 {
@@ -58,7 +60,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding-right: 50px;
+  padding-right: 80px;
 }
 
 .gov-call,
@@ -113,10 +115,10 @@
   transition: width 0.3s ease;
 }
 
-.gov-nav .nav-link:hover::after,
+/* .gov-nav .nav-link:hover::after,
 .gov-nav .nav-link.active::after {
   width: 100%;
-}
+} */
 
 /* DROPDOWN ICON */
 .gov-nav .dropdown-icon {
@@ -131,9 +133,6 @@
   color: #89C54B;
 }
 
-.navbar .dropdown-toggle::after {
-  display: none;
-}
 
 .gov-nav .dropdown-menu {
   background: #ffffff;
@@ -323,10 +322,7 @@
   }
 }
 
-.gov-nav .nav-link.active {
-  color: #3D63AA;
-  font-weight: 600;
-}
+
 
 /* ============================= */
 /* CLEAN & PROFESSIONAL DROPDOWN */
@@ -337,7 +333,7 @@
   border-radius: 10px;
   padding: 8px 0;
   border: none;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); */
   animation: dropdownFade 0.25s ease;
 }
 
@@ -431,7 +427,7 @@
 }
 /* Nav hover color cleanup */
 .gov-nav .nav-link:hover {
-  color: #3D63AA !important;
+  color: #000000!important;
 }
 
 .dropdown-link {
@@ -460,3 +456,315 @@
 }
 
 
+.gov-nav .nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px 12px !important;
+  padding-bottom: 2px !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  transition: all 0.35s ease;
+}
+
+.gov-nav .nav-link.active {
+  background: #ffffff;
+  color: #3D63AA !important;
+  font-weight: 600;
+  padding: 2px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); */
+}
+.gov-nav .dropdown:hover > .nav-link {
+  background: rgba(255, 255, 255, 0.18);
+  color: #000 !important;
+}
+@media (max-width: 991px) {
+  
+}
+.gov-navbar {
+  overflow: visible !important;
+}
+.gov-header,
+.gov-topbar,
+.gov-navbar .container-fluid,
+.navbar {
+  overflow: visible !important;
+}
+.gov-nav .dropdown-menu {
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  z-index: 9999;
+}
+.gov-nav .dropdown {
+  position: relative;
+}
+.gov-nav .dropdown-menu li {
+  width: 100%;
+  display: block;
+}
+@media (min-width: 992px) {
+  
+
+}
+.gov-nav .dropdown > .nav-link:hover {
+  transform: none !important;
+}
+.gov-nav .dropdown.show > .nav-link {
+  transform: none !important;
+}
+@media (min-width: 992px) {
+}
+.gov-nav .dropdown-menu {
+  pointer-events: auto;
+}
+.gov-nav .dropdown-menu {
+  margin-top: 6px;
+}
+/* Invisible hover bridge between nav-link & dropdown */
+.gov-nav .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+@media (min-width: 992px) {
+  
+}
+.gov-nav .dropdown > .nav-link {
+  transform: none !important;
+}
+
+/* ===== SUBMENU BASE ===== */
+.dropdown-submenu {
+  position: relative;
+}
+
+/* submenu hidden by default */
+.dropdown-submenu .submenu-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 280px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 0;
+  /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); */
+  z-index: 9999;
+}
+
+/* show submenu on hover */
+.dropdown-submenu:hover > .submenu-menu {
+  display: block;
+}
+
+/* submenu title layout */
+.submenu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* arrow default */
+.submenu-arrow {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* arrow rotate on hover */
+.dropdown-submenu:hover .submenu-arrow {
+  margin-left: 2px;
+  transform: rotate(90deg);
+}
+
+/* hover bridge (flicker fix) */
+.dropdown-submenu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 20px;
+  height: 100%;
+}
+
+.gov-nav .nav-link {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.gov-nav .nav-link,
+.gov-nav .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem; /* same as other links */
+}
+
+.gov-nav .dropdown-toggle .dropdown-icon {
+  margin-left: 0.3rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center; /* vertical centering */
+}
+
+.nav-link {
+  margin: 0 5px; /* spacing between links */
+}
+
+/* ===== MOBILE HEADER ALIGNMENT ===== */
+@media (max-width: 991px) {
+  /* Align logo left */
+  .gov-navbar .mobile-logo {
+    padding-left: 12px;
+  }
+
+  /* Navbar toggle aligns to right */
+  .navbar-toggler {
+    margin-right: 12px;
+    z-index: 1002;
+  }
+
+  /* Navbar collapse styling */
+  .gov-navbar .collapse.show {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #3D63AA;
+    flex-direction: column;
+    align-items: flex-start; /* left align menu items */
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+  }
+
+  .gov-nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start; /* left align nav links */
+    gap: 0;
+    padding: 0 12px;
+  }
+
+  .gov-nav .nav-link,
+  .gov-nav .dropdown-item {
+    width: 100%;
+    text-align: left; /* left align text */
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .gov-nav .dropdown-menu {
+    width: 100%;
+    position: relative !important;
+    background: #ffffff;
+    padding-left: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown-submenu .submenu-menu {
+    position: relative;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    border-radius: 0;
+  }
+
+  .dropdown-submenu:hover .submenu-arrow {
+    transform: rotate(0deg); /* mobile submenu arrow stays simple */
+  }
+}
+/* ===== MOBILE SLIDE DOWN MENU ===== */
+@media (max-width: 991px) {
+  .gov-navbar .collapse {
+    display: block !important;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+  }
+
+  .gov-navbar .collapse.show {
+    height: auto;
+  }
+
+  /* Add slide-down effect for nav links */
+  .gov-nav .nav-link,
+  .gov-nav .dropdown-item {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .gov-navbar .collapse.show .nav-link,
+  .gov-navbar .collapse.show .dropdown-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Submenu slide */
+  .dropdown-submenu .submenu-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .dropdown-submenu:hover > .submenu-menu,
+  .dropdown-submenu.show > .submenu-menu {
+    max-height: 500px; /* enough to show all items */
+  }
+
+  /* Optional: submenu arrow rotation */
+  .dropdown-submenu > .submenu-title .submenu-arrow {
+    transition: transform 0.35s ease;
+  }
+
+  .dropdown-submenu.show > .submenu-title .submenu-arrow {
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 991px) {
+  /* Ensure all nav links stay on one line */
+  .gov-nav .nav-link {
+    white-space: nowrap;   /* Prevent wrapping */
+    display: flex;         /* Keep text + icon inline */
+    align-items: center;   /* vertically center icon */
+    justify-content:center; /* align text left */
+    gap: 4px;              /* small gap between text and icon */
+    padding: 10px 16px !important; /* uniform padding */
+  }
+
+  /* Adjust dropdown icon size */
+  .gov-nav .dropdown-icon {
+    font-size: 16px; /* slightly smaller */
+    margin-left: 4px;
+  }
+
+  /* Ensure submenu titles don't wrap */
+  .dropdown-submenu .submenu-title {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+/* Ensure dropdown icon is visible when parent is active */
+.gov-nav .nav-link.active .dropdown-icon {
+  color: #3D63AA !important; /* match your active text color */
+}
+
+
+.gov-nav .dropdown:hover > .nav-link {
+    background: none;
+}
+.gov-nav .dropdown-icon {
+color:#ffffff;
+}

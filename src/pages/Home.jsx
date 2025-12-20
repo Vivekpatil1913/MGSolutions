@@ -14,13 +14,14 @@ import Footer from "../components/Home/Footer";
 import SubsidyCards from "../components/Home/SubsidyCards";
 import FaqSection from "../components/Home/FaqSection";
 import Team from "../components/Home/Team";
-
+import Check from "../components/Home/Check";
 const Home = () => {
   return (
     <>
       <Header />
       <HomeCarousel />
       <SubsidySection />
+      <Check />
       <SubsidyCards />
       <SubsidyProcess />
       <AboutWhyUs />

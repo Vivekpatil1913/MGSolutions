@@ -34,7 +34,7 @@ const AboutWhyUs = () => {
   return (
     <section className="about-modern">
       <Container>
-        <Row className="align-items-center gy-5">
+        <Row className="align-items-center gy-6">
           {/* ABOUT */}
           <Col lg={6}>
             <h2 className="about-title">About Us</h2>

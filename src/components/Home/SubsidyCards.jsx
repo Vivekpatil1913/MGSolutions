@@ -29,7 +29,7 @@ const SubsidyCards = () => {
                 onClick={() => navigate("/industrial-subsidy")}
               >
                 Explore Details
-                <span className="arrow">→</span>
+                <span className="arroww">→</span>
               </Button>
             </div>
           </Col>
@@ -53,7 +53,7 @@ const SubsidyCards = () => {
                 onClick={() => navigate("/invest-in-india")}
               >
                 Explore Details
-                <span className="arrow">→</span>
+                <span className="arroww">→</span>
               </Button>
             </div>
           </Col>

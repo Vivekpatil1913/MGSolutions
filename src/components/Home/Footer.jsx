@@ -19,7 +19,7 @@ const Footer = () => {
           <img src={logo} alt="Subsidy4India" className="footer-logo" />
 
           <p>
-            Subsidy4India is a one-stop platform for <br />
+            M G Solution is a one-stop platform for <br />
             all Central & State Government subsidies <br />
             in India.
           </p>
@@ -86,7 +86,7 @@ const Footer = () => {
       <div className="footer-bottom">
         Copyright © 2025{" "}
         <span className="footer-company">
-          Scinnovation Consultants Private Limited
+           Sumago Infotech Private Limited
         </span>
       </div>
     </footer>

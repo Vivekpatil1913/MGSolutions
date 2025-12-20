@@ -43,16 +43,12 @@
   height: 35px;
   font-size: 20px;
   cursor: pointer;
-  z-index: 1000;
+  /* z-index: 1000; */
   opacity: 0.8;
   transition: all 0.3s ease;
 }
 
-.arrow:hover {
-  background: #89C54B;
-  color: #000;
-  transform: scale(1.1);
-}
+
 
 .arrow.prev { left: -20px; }
 .arrow.next { right: -20px; }
