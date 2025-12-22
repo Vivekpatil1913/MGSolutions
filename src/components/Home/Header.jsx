@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FiPhoneCall, FiMail, FiChevronDown } from "react-icons/fi";
 import logo from "../../assets/MAIN MG Solutions Logo 1..png";
 import "./Header.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 
 const Header = () => {
   const handleSubmenuToggle = (e) => {
@@ -26,19 +26,21 @@ const Header = () => {
       <div className="gov-topbar">
         <Container fluid className="gov-topbar-inner">
           <div className="gov-brand">
-            <img src={logo} alt="Subsidy Logo" />
+            <Link to="/">
+              <img src={logo} alt="Subsidy Logo" />
+            </Link>
           </div>
 
           <div className="gov-actions">
-            <div className="gov-call">
+            <a href="tel:+919962696204" className="gov-call">
               <FiPhoneCall />
               <span>+91 99626 96204</span>
-            </div>
+            </a>
 
-            <div className="gov-email">
+            <a href="mailto:info@subsidy4india.com" className="gov-email">
               <FiMail />
               <span>info@subsidy4india.com</span>
-            </div>
+            </a>
           </div>
         </Container>
       </div>

@@ -38,7 +38,7 @@ const AboutWhyUs = () => {
           {/* ABOUT */}
           <Col lg={6}>
             <h2 className="about-title">About Us</h2>
-
+            <div className="para">
             <p>
               Subsidy4India is a one stop platform for a farmer, agro
               entrepreneur, startups, corporate, foreign investor or even a not
@@ -69,7 +69,7 @@ const AboutWhyUs = () => {
               you to help you avail the scheme benefits till the funds are
               disbursed in your bank account.
             </p>
-
+            </div>
             <p className="highlight-text">
               <strong>It’s as simple as lifting a fork, literally!</strong>
             </p>

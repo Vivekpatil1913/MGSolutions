@@ -12,15 +12,15 @@ const AboutIntro = () => {
 
           {/* LEFT CONTENT */}
           <Col lg={7}>
-            <span className="about-badge">About Subsidy4India</span>
+            <span className="about-badge">About M G Solution</span>
 
             <h2 className="about-title">
-              Subsidy4India is a one stop platform for all Central & State Govt.
+              M G Solution is a one stop platform for all Central & State Govt.
               subsidies in India
             </h2>
 
             <p className="about-text">
-              Subsidy4India is a one stop platform for entrepreneurs, startups,
+               M G Solution is a one stop platform for entrepreneurs, startups,
               corporates, MSMEs, foreign investors or even not for profit
               organisation to identify and avail relevant Central Govt. and
               State Govt. subsidies and incentives being provided by Government
@@ -30,7 +30,7 @@ const AboutIntro = () => {
             </p>
 
             <p className="about-text">
-              Subsidy4India is promoted by Scinnovation Consultants Pvt Ltd, a
+               M G Solution is promoted by Scinnovation Consultants Pvt Ltd, a
               well known management consulting firm headquartered in Mumbai
               with offices in New Delhi and USA founded by the famous Shark
               Tank India couple, Rajeev & Trishala Surana supported by an
@@ -56,7 +56,7 @@ const AboutIntro = () => {
             </p>
 
             <p className="about-text">
-              Subsidy4India will be your trusted partner to help you identify
+               M G Solution will be your trusted partner to help you identify
               the right scheme which suits your requirement and then work with
               you to help you avail the scheme benefits till the funds are
               disbursed in your bank account.
@@ -64,7 +64,7 @@ const AboutIntro = () => {
 
             <p className="about-text">
               It’s as simple as lifting a fork, literally! the phrase word is
-              Subsidy4India
+               M G Solution
             </p>
 
             {/* ✅ Use Link instead of Button */}
@@ -93,7 +93,7 @@ const AboutIntro = () => {
                 </div>
                 <div>
                   <h4>Research & Development</h4>
-                  <p>Research and development are the main mantras of subsidy4india.</p>
+                  <p>Research and development are the main mantras of  M G Solution.</p>
                 </div>
               </div>
 

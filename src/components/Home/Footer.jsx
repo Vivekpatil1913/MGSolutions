@@ -8,12 +8,12 @@ import {
 } from "react-icons/fa";
 
 import logo from "../../assets/MAIN MG Solutions Logo 1..png";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-
         {/* COLUMN 1 : LOGO + ABOUT */}
         <div className="footer-col">
           <img src={logo} alt="Subsidy4India" className="footer-logo" />
@@ -34,60 +34,184 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul className="footer-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/subsidies">Subsidies</a></li>
-            <li><a href="/faq">FAQs</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                About Us
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/industrial-state-subsidy"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                <NavLink
+                  to="/govt-subsidy"
+                  className={({ isActive }) =>
+                    isActive ? "active-footer-link" : ""
+                  }
+                >
+                  <NavLink
+                    to="/production-linked-incentives"
+                    className={({ isActive }) =>
+                      isActive ? "active-footer-link" : ""
+                    }
+                  >
+                    <NavLink
+                      to="/detailed-project-report"
+                      className={({ isActive }) =>
+                        isActive ? "active-footer-link" : ""
+                      }
+                    >
+                      Industrial Subsidy
+                    </NavLink>
+                  </NavLink>
+                </NavLink>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/invest-in-india"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                Invest in India
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                Contact Us
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/disclaimer"
+                className={({ isActive }) =>
+                  isActive ? "active-footer-link" : ""
+                }
+              >
+                Disclaimers
+              </NavLink>
+            </li>
           </ul>
         </div>
 
+        {/* COLUMN 3 : CONTACT + SOCIALS */}
         {/* COLUMN 3 : CONTACT + SOCIALS */}
         <div className="footer-contact-block">
           <div>
             <h3>Contacts</h3>
 
+            {/* ADDRESS */}
             <p>
               <FaMapMarkerAlt />
-              Scinnovation Consultants Pvt Ltd <br />
-              305, Regent Chambers, 3rd Floor <br />
-              Nariman Point, Mumbai – 400021
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Scinnovation+Consultants+Pvt+Ltd+Nariman+Point+Mumbai"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-plain-link"
+              >
+                Scinnovation Consultants Pvt Ltd <br />
+                305, Regent Chambers, 3rd Floor <br />
+                Nariman Point, Mumbai – 400021
+              </a>
             </p>
 
+            {/* PHONE */}
             <p>
-              <FaPhoneAlt /> +91 9962696204
+              <FaPhoneAlt />
+              <a href="tel:+919962696204" className="footer-plain-link">
+                +91 9962696204
+              </a>
             </p>
 
+            {/* EMAIL */}
             <p>
-              <FaEnvelope /> helpdesk@scinnovation.in
+              <FaEnvelope />
+              <a
+                href="mailto:helpdesk@scinnovation.in"
+                className="footer-plain-link"
+              >
+                helpdesk@scinnovation.in
+              </a>
             </p>
           </div>
 
           {/* SOCIAL ICONS AT BOTTOM */}
           <div className="footer-socials">
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="twitter">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="twitter"
+            >
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="linkedin">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="linkedin"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="https://wa.me/919962696204" target="_blank" rel="noreferrer" className="whatsapp">
+            <a
+              href="https://wa.me/919962696204"
+              target="_blank"
+              rel="noreferrer"
+              className="whatsapp"
+            >
               <FaWhatsapp />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="youtube">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noreferrer"
+              className="youtube"
+            >
               <FaYoutube />
             </a>
           </div>
         </div>
-
       </div>
 
       <div className="footer-bottom">
         Copyright © 2025{" "}
-        <span className="footer-company">
-           Sumago Infotech Private Limited
-        </span>
+        <a
+          href="https://www.sumagoinfotech.com"
+          target="blank"
+          rel="noreferrer"
+          className="footer-company"
+        >
+          Sumago Infotech Private Limited
+        </a>
       </div>
     </footer>
   );

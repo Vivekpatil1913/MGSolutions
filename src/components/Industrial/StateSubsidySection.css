@@ -37,7 +37,7 @@
   transition: all 0.35s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:flex-start;
 }
 
 .state-card:hover {
@@ -190,9 +190,18 @@
 
 /* Map */
 .modal-map img {
-  width: 100%;
-  border-radius: 16px;
-  background: #f5f5f5;
+  width: 90% !important;
+  max-height: 220px !important;
+  object-fit: contain !important;
+  background: #f5f5f5 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.modal-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Info */
@@ -203,6 +212,7 @@
   background: rgba(137, 197, 75, 0.15);
   padding: 20px;
   border-radius: 14px;
+  text-align: justify;
 }
 
 /* ===== Animations ===== */
@@ -285,17 +295,7 @@
   gap: 25px;
 }
 
-/* Fake Map */
-.fake-map {
-  height: 200px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #3d63aa, #89c54b);
-  color: #fff;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 /* Text */
 .modal-content p {
@@ -323,4 +323,72 @@
   .modal-content {
     grid-template-columns: 1fr;
   }
+}
+.modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 720px;     /* ⬅ smaller modal */
+  max-height: 85vh;     /* ⬅ prevent overflow */
+  overflow-y: auto;    /* ⬅ scroll inside */
+  border-radius: 16px;
+  padding: 25px;
+  position: relative;
+}
+
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  align-items:center
+}
+.modal-info {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.modal-info p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.modal-overlay {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-box {
+  animation: scaleIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+.state-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.state-card p {
+  flex-grow: 1; /* pushes button to bottom */
+}
+
+.state-card button {
+  margin-top: auto;
+}
+.modal-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -133,7 +133,15 @@
 
 .footer-company {
   color: #25d366;
+  text-decoration: none;
 }
+
+.active-footer-link {
+  font-weight: 900;
+  color: #25d366;
+}
+
+
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
@@ -250,3 +258,12 @@
 }
 
 
+.footer-plain-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline;
+}
+
+.footer-plain-link:hover {
+  color: inherit;
+}
