@@ -26,8 +26,8 @@ const Header = () => {
       <div className="gov-topbar">
         <Container fluid className="gov-topbar-inner">
           <div className="gov-brand">
-            <Link to="/">
-              <img src={logo} alt="Subsidy Logo" />
+            <Link to="/" className="mobile-navbar-logo">
+              <img src={logo} alt="MG Solution Logo" />
             </Link>
           </div>
 
@@ -47,6 +47,14 @@ const Header = () => {
 
       <Navbar expand="lg" className="gov-navbar">
         <Container fluid>
+          {/* Mobile logo on LEFT */}
+    <Navbar.Brand
+      as={Link}
+      to="/"
+      className="mobile-navbar-logo"
+    >
+      <img src={logo} alt="MG Solutions Logo" />
+    </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav className="gov-nav mx-auto">

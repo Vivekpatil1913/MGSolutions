@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import "./Disclaim.css";
 
@@ -16,41 +16,18 @@ const disclaimers = [
 ];
 
 const Disclaim = () => {
-  const scrollRef = useRef(null);
-
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
-  };
-
   return (
-    <section className="disclaimers-section">
+    <section className="disclaim-section">
       <Container>
-        <h2 className="disclaimers-title">Disclaimers</h2>
+        <h2 className="disclaim-title">Disclaimers</h2>
 
-       <div className="carousel-wrapper">
-          {/* Prev Arrow */}
-          <button className="arrow prev" onClick={scrollLeft}>
-            ❮
-          </button>
-
-          {/* Cards */}
-          <div className="cards-container" ref={scrollRef}>
-            {disclaimers.map((item, index) => (
-              <div key={index} className="disclaimer-card">
-                <div className="card-number">{index + 1}</div>
-                <p className="card-text">{item}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Right arrow */}
-          <button className="arrow next" onClick={scrollRight}>
-            &#10095;
-          </button>
+        <div className="disclaim-grid">
+          {disclaimers.map((text, i) => (
+            <div key={i} className="disclaim-card">
+              <div className="card-number">{String(i + 1).padStart(2, "0")}</div>
+              <p className="card-text">{text}</p>
+            </div>
+          ))}
         </div>
       </Container>
     </section>

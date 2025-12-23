@@ -12,7 +12,7 @@ const Downloads = () => {
       <Container>
         <h2 className="downloads-title">Our Downloads</h2>
 
-        <Row className="g-5 justify-content-center">
+        <Row className="g-5 justify-content-center dw">
 
           {/* CARD 1 */}
           <Col lg={5} md={6} sm={12}>

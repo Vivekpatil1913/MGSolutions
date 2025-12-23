@@ -1,6 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
 import { Container } from "react-bootstrap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
+
 import "./Clients.css";
 
 import logo1 from "../../assets/1.webp";
@@ -16,47 +20,38 @@ import logo10 from "../../assets/10.webp";
 import logo11 from "../../assets/11.webp";
 import logo12 from "../../assets/12.webp";
 
-const logos = [logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8,logo9,logo10,logo11,logo12];
-
-// Custom Arrows – add "position: absolute" in CSS
-const NextArrow = ({ onClick }) => (
-  <button className="arrow next" onClick={onClick}>❯</button>
-);
-
-const PrevArrow = ({ onClick }) => (
-  <button className="arrow prev" onClick={onClick}>❮</button>
-);
+const logos = [
+  logo1, logo2, logo3, logo4, logo5, logo6,
+  logo7, logo8, logo9, logo10, logo11, logo12
+];
 
 const Clients = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 4 } },
-      { breakpoint: 992, settings: { slidesToShow: 3 } },
-      { breakpoint: 576, settings: { slidesToShow: 2 } }
-    ]
-  };
-
   return (
     <section className="clients-section">
       <Container>
         <h2 className="clients-title">Our Clients</h2>
-        <Slider {...settings}>
+
+        <Swiper
+          modules={[Autoplay]}
+          loop
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          spaceBetween={30}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 },
+            1200: { slidesPerView: 6 },
+          }}
+        >
           {logos.map((logo, index) => (
-            <div key={index} className="client-logo-wrap">
-              <img src={logo} alt={`Client ${index + 1}`} />
-            </div>
+            <SwiperSlide key={index}>
+              <div className="client-logo-wrap">
+                <img src={logo} alt={`Client ${index + 1}`} />
+              </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </Container>
     </section>
   );

@@ -1,6 +1,6 @@
 /* SECTION */
 .subsidy-focus {
-  padding: 60px 0;
+  padding: 30px 0;
   background: #ffffff;
 }
 
@@ -130,7 +130,7 @@
 /* Mobile */
 @media (max-width: 576px) {
   .subsidy-focus {
-    padding: 60px 0;
+    padding: 15px 0;
   }
 
   .focus-card {
@@ -161,18 +161,12 @@
   padding-right: 15px;
 }
 
-/* Make row and columns not overflow */
-.subsidy-focus .row {
-  margin-left: -25px;
-  margin-right: -25px;
+
+
+
+
+@media (max-width: 576px) {
+  .subsidy-focus .row {
+    --bs-gutter-x: 1rem;
+  }
 }
-
-.subsidy-focus .col-lg-6,
-.subsidy-focus .col-md-6,
-.subsidy-focus .col-sm-12 {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-
-

@@ -9,46 +9,51 @@ import ganesh from "../../assets/Team-photos-20th-nov.-2.webp";
 import yogesh from "../../assets/Team-photos-20th-nov.webp";
 
 const team = [
-  { name: "Prachi Desai", role: "R&D Associate", img: prachi, linkedin: "#" },
-  { name: "Nilesh Sodaye", role: "BD Associate", img: nilesh, linkedin: "#" },
-  { name: "Ujjwala Gumble", role: "IP Associate", img: ujjwala, linkedin: "#" },
-  { name: "Advocate Ganesh Juvekar", role: "Trademark Associate", img: ganesh, linkedin: "#" },
-  { name: "Yogesh Patel", role: "Financial Advisor", img: yogesh, linkedin: "#" },
+  { name: "Prachi Desai", role: "R&D Associate", img: prachi, linkedin: "https://linkedin.com" },
+  { name: "Nilesh Sodaye", role: "BD Associate", img: nilesh, linkedin: "https://linkedin.com" },
+  { name: "Ujjwala Gumble", role: "IP Associate", img: ujjwala, linkedin: "https://linkedin.com" },
+  { name: "Advocate Ganesh Juvekar", role: "Trademark Associate", img: ganesh, linkedin: "https://linkedin.com" },
+  { name: "Yogesh Patel", role: "Financial Advisor", img: yogesh, linkedin: "https://linkedin.com" },
 ];
-
-const TeamCard = ({ member }) => (
-  <div className="team-card">
-    <div className="team-img-wrap">
-      <img src={member.img} alt={member.name} />
-      <a href={member.linkedin} className="linkedin-float" target="_blank" rel="noreferrer">
-        <FaLinkedinIn />
-      </a>
-    </div>
-    <div className="team-info">
-      <h4>{member.name}</h4>
-      <p>{member.role}</p>
-    </div>
-  </div>
-);
 
 const Team = () => {
   return (
     <section className="team-section">
-      <h2 className="team-heading">Our Team</h2>
+  <h2 className="team-title">Our Team</h2>
 
-      <div className="team-grid">
-        {team.slice(0, 3).map((member, index) => (
-          <TeamCard key={index} member={member} />
-        ))}
-
-        {/* Last 2 members in a centered row */}
-        <div className="team-last-row">
-          {team.slice(3).map((member, index) => (
-            <TeamCard key={index} member={member} />
-          ))}
+  {/* FIRST ROW – 3 CARDS */}
+  <div className="team-grid team-row-1">
+    {team.slice(0, 3).map((member, i) => (
+      <div className="team-card" key={i}>
+        <div className="team-img">
+          <img src={member.img} alt={member.name} />
+          <a href={member.linkedin} className="team-linkedin">
+            <FaLinkedinIn />
+          </a>
         </div>
+        <h4>{member.name}</h4>
+        <span className="team-role">{member.role}</span>
       </div>
-    </section>
+    ))}
+  </div>
+
+  {/* SECOND ROW – 2 CENTERED */}
+  <div className="team-row-2">
+    {team.slice(3).map((member, i) => (
+      <div className="team-card" key={i}>
+        <div className="team-img">
+          <img src={member.img} alt={member.name} />
+          <a href={member.linkedin} className="team-linkedin">
+            <FaLinkedinIn />
+          </a>
+        </div>
+        <h4>{member.name}</h4>
+        <span className="team-role">{member.role}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
   );
 };
 

@@ -1,7 +1,7 @@
 .check-section {
   padding: 40px 20px;
   background: linear-gradient(180deg, #f4f8ff, #ffffff);
-  margin-top: -60px; /* FLOATING EFFECT below carousel */
+  margin-top: -60px; 
   position: relative;
   z-index: 3;
 }
@@ -93,6 +93,7 @@
 @media (max-width: 576px) {
   .check-section {
     margin-top: -40px;
+   
   }
 
   .check-card {
@@ -107,6 +108,7 @@
     width: 100%;
     padding: 14px;
   }
+  
 }
 .check-section {
   padding: 50px 20px;
@@ -247,6 +249,7 @@
   .check-left p {
     font-size: 14px;
   }
+  
 }
 
 /* Large screens (≥1400px) – keep card centered, not stretched */
@@ -283,4 +286,35 @@
 
 .check-card {
   padding: clamp(28px, 5vw, 48px);
+}
+/* ===== FIX CHECK SECTION OVERLAP ON MOBILE ===== */
+@media (max-width: 767px) {
+  .check-section {
+    margin: 10px !important;   /* remove overlap */
+    padding-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .check-card {
+    border-radius: 18px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+  }
+  
+
+}
+
+/* Mobile: split heading into two lines */
+@media (max-width: 576px) {
+  .check-left h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.2;
+  }
+
+  .check-left h2 span {
+    display: inline-block;
+  }
+  
 }

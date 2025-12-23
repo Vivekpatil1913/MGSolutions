@@ -1,5 +1,5 @@
 .about-modern {
-  padding: 40px 0;
+  padding: 30px 0;
   background: linear-gradient(
     180deg,
     rgba(61, 99, 170, 0.04),
@@ -111,7 +111,8 @@
 }
 
 .about-cta {
-  margin-top: 80px;
+  margin-top: 60px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -254,6 +255,8 @@
 }
 
 @media (max-width: 576px) {
+
+
   .why-title {
     font-size: 26px;
   }
@@ -379,7 +382,7 @@
 }
 @media (max-width: 576px) {
   .about-modern {
-    padding: 60px 0;
+    padding: 15px 10px;
   }
 
   .about-title {
@@ -397,6 +400,7 @@
   .dark-btn,
   .outline-gold-btn {
     width: 100% !important;
+    
   }
 }
 
@@ -452,6 +456,8 @@
 }
 
 @media (max-width: 576px) {
+
+
   .why-last-row-modern {
     flex-direction: column;
     gap: 20px;
@@ -480,6 +486,30 @@
 
   .why-last-item-modern p {
     font-size: 14px; /* slightly smaller text */
+  }
+  
+  .gold-btn {
+    text-align: end!important;
+    justify-content: center !important;
+  }
+}
+/* Mobile: center Get in Touch button */
+@media (max-width: 576px) {
+  .gold-btn {
+    display: flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+}
+/* Mobile: reduce vertical spacing */
+@media (max-width: 576px) {
+  .about-cta {
+    margin-top: 35px !important;
+  }
+
+  .why-clean {
+    margin-top: 20px !important;
   }
 }
 

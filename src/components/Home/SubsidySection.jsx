@@ -7,7 +7,7 @@ const SubsidySection = () => {
   return (
     <section className="subsidy-section">
       <Container>
-        <Row className="align-items-center gy-5">
+        <Row className="align-items-center gy-5 vd">
           {/* LEFT CONTENT */}
           <Col lg={6} className="content-col">
             <h2 className="section-title">

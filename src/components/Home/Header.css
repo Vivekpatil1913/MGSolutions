@@ -162,6 +162,7 @@
   .gov-actions {
     padding-right: 20px;
     gap: 14px;
+    
   }
 
   .gov-call,
@@ -256,6 +257,7 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    
   }
 
   .gov-call,
@@ -387,6 +389,7 @@
     margin-left: 6px;
     border-radius: 10px;
   }
+
 }
 
 /* Mobile dropdown cleanup */
@@ -400,6 +403,7 @@
     padding: 12px 20px;
     font-size: 16px;
   }
+  
 }
 
 /* Chevron animation */
@@ -680,6 +684,9 @@
   .dropdown-submenu:hover .submenu-arrow {
     transform: rotate(0deg); /* mobile submenu arrow stays simple */
   }
+ 
+  
+
 }
 /* ===== MOBILE SLIDE DOWN MENU ===== */
 @media (max-width: 991px) {
@@ -781,3 +788,32 @@ color:#ffffff;
   display: inline-block;
 }
 
+/* Hide navbar logo on desktop */
+.mobile-navbar-logo {
+  display: none;
+}
+
+/* Mobile navbar layout */
+@media (max-width: 991px) {
+  .mobile-navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-navbar-logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  /* Force toggle to right */
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+/* Mobile view: hide ONLY logo from topbar */
+@media (max-width: 991px) {
+  .gov-topbar .gov-brand {
+    display: none;
+  }
+}

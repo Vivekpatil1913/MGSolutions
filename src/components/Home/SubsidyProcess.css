@@ -101,6 +101,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
   }
+  .flow-step::after {
+    display: none;
+  }
 
   .process-flow::before {
     display: none;
@@ -122,7 +125,7 @@
 /* ===== MOBILE VIEW RE-DESIGN ===== */
 @media (max-width: 576px) {
   .subsidy-process {
-    padding: 60px 0;
+    padding: 30px 0;
   }
 
   .process-title {

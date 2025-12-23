@@ -1,5 +1,5 @@
 .about-intro {
-  padding: 90px 0;
+  padding: 40px 0;
   background: linear-gradient(
     180deg,
     rgba(61, 99, 170, 0.05),
@@ -58,12 +58,13 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  padding-top: 30px !important;
 }
 
 .highlight-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 22px 20px;
+  padding: 20px 20px;
   display: flex;
   gap: 16px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
@@ -108,7 +109,7 @@
 
 @media (max-width: 576px) {
   .about-intro {
-    padding: 70px 0;
+    padding: 20px 5px;
   }
 
   .about-title {
@@ -249,7 +250,7 @@
 }
 
 .about-highlights {
- padding-top: 70px;
+ padding-top: 2px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -278,4 +279,13 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(61, 99, 170, 0.3);
   color: #fff;
+}
+@media (max-width: 576px) {
+  .about-ct {
+    display: block;
+    margin: 30px auto 0; /* center horizontally */
+   
+    text-align: center;
+    width: fit-content;
+  }
 }

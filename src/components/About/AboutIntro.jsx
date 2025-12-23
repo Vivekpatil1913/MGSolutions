@@ -27,7 +27,7 @@ const AboutIntro = () => {
               agencies in any segment such as manufacturing, services,
               agriculture & food and even emerging technologies such as
               Electric Vehicles, AI, renewable energy, green hydrogen etc.
-            </p>
+               </p>
 
             <p className="about-text">
                M G Solution is promoted by Scinnovation Consultants Pvt Ltd, a
@@ -67,7 +67,7 @@ const AboutIntro = () => {
                M G Solution
             </p>
 
-            {/* ✅ Use Link instead of Button */}
+            
             <Link to="/contact" className="about-ct">
               Contact Us Now
             </Link>
