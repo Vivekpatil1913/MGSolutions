@@ -183,6 +183,16 @@
   .request-info h3 {
     font-size: 18px;
   }
+  .request-section {
+    padding: 10px;
+  }
+  .request-info {
+    padding: 10px;
+  }
+  .request-wrapper {
+    gap: 30px;
+  }
+  
 }
 .request-form small {
   color: #FF6B6B ;
@@ -268,4 +278,23 @@
   50%  { transform: scale(0.95); }
   75%  { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+@media (max-width: 992px) {
+  .request-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .request-info {
+    padding: 30px 20px;
+  }
+
+  .request-info::before {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .request-form {
+    padding: 30px 20px;
+  }
 }

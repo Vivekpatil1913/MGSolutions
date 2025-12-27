@@ -215,6 +215,12 @@
     margin-left: 0;
     justify-content: center;
   }
+ 
+  .footer-bottom {
+    margin-top: 20px;
+  }
+
+  
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -266,4 +272,75 @@
 
 .footer-plain-link:hover {
   color: inherit;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1.3fr 1fr 1.2fr; /* same as desktop */
+    gap: 20px; /* consistent column spacing */
+    padding: 25px 15px;
+    align-items: start; /* top-align all columns */
+  }
+
+  /* Column content alignment */
+  .footer-col,
+  .footer-contact-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align items to top like desktop */
+    height: auto; /* prevent stretching */
+  }
+
+  /* Headings */
+  .footer h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: #89c54b;
+  }
+
+  /* Text and links */
+  .footer p,
+  .footer-links a {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+
+  /* Logo */
+  .footer-logo {
+    width: 130px;
+    margin-bottom: 16px;
+  }
+
+  /* Social icons */
+  .footer-socials {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .footer-socials a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-socials a svg {
+    font-size: 16px;
+  }
+
+  /* Contact info spacing */
+  .footer-contact-block p {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    font-size: 16px;
+    margin-top: 40px;
+    padding: 15px 10px;
+  }
+
+  /* Remove 2nd column margin shift */
+  .footer-container > .footer-col:nth-child(2) {
+    margin-left: 0;
+  }
 }

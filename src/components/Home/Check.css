@@ -66,7 +66,7 @@
 .check-right button:hover {
   background: #fff;
   color: #000;
-  transform: translateY(-3px);
+  
 }
 
 .time-text {
@@ -182,7 +182,7 @@
 .check-right button {
   background: #111;
   padding: 15px 32px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  /* box-shadow: 0 6px 18px rgba(0,0,0,0.25); */
 }
 
 .check-right button:hover {
@@ -224,10 +224,7 @@
   }
 }
 
-/* =========================
-   RESPONSIVE SAFETY FIXES
-   (NO DESIGN CHANGE)
-========================= */
+
 
 /* Prevent horizontal overflow on very small devices */
 .check-section,
@@ -290,7 +287,7 @@
 /* ===== FIX CHECK SECTION OVERLAP ON MOBILE ===== */
 @media (max-width: 767px) {
   .check-section {
-    margin: 10px !important;   /* remove overlap */
+    margin-top: 0 !important;   /* remove overlap */
     padding-top: 20px;
   }
 }
@@ -299,7 +296,7 @@
     border-radius: 18px;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
   }
-  
+
 
 }
 
@@ -315,6 +312,9 @@
 
   .check-left h2 span {
     display: inline-block;
+  }
+  .check-section {
+    padding-bottom: 40px;
   }
   
 }

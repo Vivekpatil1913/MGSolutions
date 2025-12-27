@@ -1,9 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 import "./Clients.css";
 
@@ -21,8 +23,18 @@ import logo11 from "../../assets/11.webp";
 import logo12 from "../../assets/12.webp";
 
 const logos = [
-  logo1, logo2, logo3, logo4, logo5, logo6,
-  logo7, logo8, logo9, logo10, logo11, logo12
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6,
+  logo7,
+  logo8,
+  logo9,
+  logo10,
+  logo11,
+  logo12,
 ];
 
 const Clients = () => {
@@ -30,18 +42,25 @@ const Clients = () => {
     <section className="clients-section">
       <Container>
         <h2 className="clients-title">Our Clients</h2>
-
         <Swiper
-          modules={[Autoplay]}
-          loop
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          spaceBetween={30}
+          modules={[Autoplay, Navigation]}
+          loop={true}
+          grabCursor={true}
+          touchRatio={1}
+          simulateTouch={true}
+          autoplay={{
+            delay: 2200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+         
+          spaceBetween={20}
           breakpoints={{
-            0: { slidesPerView: 1 },
+            0: { slidesPerView: 2 },
             576: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             992: { slidesPerView: 4 },
-            1200: { slidesPerView: 6 },
+            1200: { slidesPerView: 7 },
           }}
         >
           {logos.map((logo, index) => (

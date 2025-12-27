@@ -187,10 +187,22 @@
     grid-template-columns: 1fr;
     direction: ltr; /* override reverse for small screens */
   }
+
+  .appointment-btn {
+    margin-top: -20px;
+    padding-bottom: 20px;
+  }
 }
 @media (max-width: 576px) {
   .office-row {
     margin-bottom: 40px; /* reduced from 100px */
     gap: 24px;           /* tighter space between content & map */
+  }
+  
+  .contact-luxury {
+    padding: 20px;
+  }
+  .appointment-btn {
+    margin-bottom: 10px !important;
   }
 }

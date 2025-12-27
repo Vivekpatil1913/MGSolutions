@@ -22,40 +22,90 @@ const EligibilityForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  /* ===== REGEX (same quality as Careers form) ===== */
+  const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+  const mobileRegex = /^[6-9]\d{9}$/;
+
+  /* ===== HANDLE CHANGE WITH LIVE VALIDATION ===== */
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // Clear error on typing
+    const { name, value } = e.target;
+    let val = value;
+
+    /* Mobile: numbers only + max 10 digits */
+    if (name === "mobile") {
+      val = val.replace(/\D/g, "");
+      if (val.length > 10) return;
+    }
+
+    setFormData({ ...formData, [name]: val });
+
+    /* Live validation */
+    let msg = "";
+
+    if (name === "organization" && val.trim() === "") {
+      msg = "Organization name is required";
+    }
+
+    if (name === "email") {
+      if (val.trim() === "") msg = "Email is required";
+      else if (!emailRegex.test(val.trim()))
+        msg = "Enter a valid email address";
+    }
+
+    if (name === "mobile") {
+      if (val.trim() === "") msg = "Mobile number is required";
+      else if (!mobileRegex.test(val))
+        msg = "Enter valid 10-digit mobile number";
+    }
+
+    if (name === "location" && val.trim() === "") {
+      msg = "Location is required";
+    }
+
+    setErrors((prev) => ({ ...prev, [name]: msg }));
   };
 
+  /* ===== STEP VALIDATION (FINAL CHECK) ===== */
   const validateStep = () => {
     let tempErrors = {};
 
     if (step === 1) {
-      if (!formData.organization.trim()) tempErrors.organization = "Organization name is required";
-      if (!formData.email.trim()) tempErrors.email = "Email is required";
-      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      if (!formData.organization.trim())
+        tempErrors.organization = "Organization name is required";
+
+      if (!formData.email.trim())
+        tempErrors.email = "Email is required";
+      else if (!emailRegex.test(formData.email.trim()))
         tempErrors.email = "Enter a valid email address";
 
-      if (!formData.mobile.trim()) tempErrors.mobile = "Mobile number is required";
-      else if (!/^[6-9]\d{9}$/.test(formData.mobile))
-        tempErrors.mobile = "Enter a valid 10-digit mobile number";
+      if (!formData.mobile.trim())
+        tempErrors.mobile = "Mobile number is required";
+      else if (!mobileRegex.test(formData.mobile))
+        tempErrors.mobile = "Enter valid 10-digit mobile number";
 
-      if (!formData.location.trim()) tempErrors.location = "Location is required";
+      if (!formData.location.trim())
+        tempErrors.location = "Location is required";
     }
 
     if (step === 2) {
-      if (!formData.production) tempErrors.production = "Select expected production";
-      if (!formData.investmentType) tempErrors.investmentType = "Select investment type";
+      if (!formData.production)
+        tempErrors.production = "Select expected production";
+      if (!formData.investmentType)
+        tempErrors.investmentType = "Select investment type";
     }
 
     if (step === 3) {
-      if (!formData.landCost.trim()) tempErrors.landCost = "Enter land cost";
-      if (!formData.buildingCost.trim()) tempErrors.buildingCost = "Enter building cost";
-      if (!formData.machineryCost.trim()) tempErrors.machineryCost = "Enter machinery cost";
+      if (!formData.landCost.trim())
+        tempErrors.landCost = "Enter land cost";
+      if (!formData.buildingCost.trim())
+        tempErrors.buildingCost = "Enter building cost";
+      if (!formData.machineryCost.trim())
+        tempErrors.machineryCost = "Enter machinery cost";
     }
 
     if (step === 4) {
-      if (!formData.termLoan) tempErrors.termLoan = "Please select an option";
+      if (!formData.termLoan)
+        tempErrors.termLoan = "Please select an option";
     }
 
     setErrors(tempErrors);
@@ -109,12 +159,13 @@ const EligibilityForm = () => {
           />
         </div>
 
-        <form className="eligibility-form" onSubmit={handleSubmit}>
+        <form className="eligibility-form" onSubmit={handleSubmit} noValidate>
 
           {/* STEP 1 */}
           {step === 1 && (
             <div className="form-step">
               <h3>Contact & Location</h3>
+
               <input
                 name="organization"
                 placeholder="Organization Name *"
@@ -157,6 +208,7 @@ const EligibilityForm = () => {
           {step === 2 && (
             <div className="form-step">
               <h3>Investment Details</h3>
+
               <select
                 name="production"
                 value={formData.production}
@@ -192,6 +244,7 @@ const EligibilityForm = () => {
           {step === 3 && (
             <div className="form-step">
               <h3>Cost & Industry</h3>
+
               <input
                 name="landCost"
                 placeholder="Land Cost (₹ Cr)"
@@ -227,6 +280,7 @@ const EligibilityForm = () => {
           {step === 4 && (
             <div className="form-step">
               <h3>Final Details</h3>
+
               <select
                 name="termLoan"
                 value={formData.termLoan}
@@ -241,6 +295,7 @@ const EligibilityForm = () => {
               <button type="submit" className="submit-btn">
                 Submit Eligibility Form
               </button>
+
               <button type="button" className="back-link" onClick={prevStep}>
                 ← Go Back
               </button>

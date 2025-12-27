@@ -1,6 +1,7 @@
 /* ===== Section ===== */
 .dpr-section {
-  padding: 90px 20px;
+  padding: 40px 20px;
+  padding-bottom: 20px;
   background: linear-gradient(
     180deg,
     rgba(61, 99, 170, 0.04),
@@ -110,11 +111,13 @@
 
 @media (max-width: 576px) {
   .dpr-section {
-    padding: 60px 15px;
+    padding: 30px 15px;
+    
   }
 
   .dpr-content {
-    padding: 30px;
+    padding: 25px;
+   
   }
 
   .dpr-title {
@@ -123,5 +126,13 @@
 
   .dpr-content p {
     font-size: 15px;
+  }
+   
+  .dpr-image {
+    margin-top: 10px;
+    padding: 0 15px;
+  }
+  .dpr-container {
+    gap: 20px;
   }
 }

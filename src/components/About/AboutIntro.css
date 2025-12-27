@@ -49,9 +49,7 @@
   color: #ffffff;
 }
 
-.about-cta:hover {
-  transform: translateY(-3px);
-}
+
 
 /* RIGHT CARDS */
 .about-highlights {
@@ -288,4 +286,7 @@
     text-align: center;
     width: fit-content;
   }
+   .about-highlights {
+    padding-top: 2px !important;
+   }
 }

@@ -65,34 +65,24 @@ const StateSubsidySection = () => {
       <h2 className="state-title">
         Subsidies Across <span>Indian States</span>
       </h2>
-      
-    <div className="state-slider-wrapper">
 
-      <div className="state-slider">
-        {states.map((state, index) => (
-          <div
-            key={index}
-            className={`state-tab ${activeIndex === index ? "open" : ""}`}
-          >
-            <div className="state-header">
-              <img src={state.image} alt={state.name} />
-              <h3>{state.name}</h3>
+      <div className="state-slider-wrapper">
+        <div className="state-slider">
+          {states.map((state, index) => (
+            <div
+              key={index}
+              className={`state-tab ${activeIndex === index ? "open" : ""}`}
+              onClick={() => setSelectedState(state)} // 🔥 Make entire tab clickable
+            >
+              <div className="state-header">
+                <img src={state.image} alt={state.name} />
+                <h3>{state.name}</h3>
 
-              <span
-                className="toggle-btn"
-                onClick={(e) => {
-                  e.stopPropagation(); // IMPORTANT
-                  setSelectedState(state);
-                }}
-              >
-                +
-              </span>
+                <span className="toggle-btn">+</span>
+              </div>
             </div>
-
-          
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
       {selectedState && (
         <div className="modal-overlay" onClick={() => setSelectedState(null)}>

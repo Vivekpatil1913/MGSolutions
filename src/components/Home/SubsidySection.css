@@ -113,7 +113,7 @@
 @media (max-width: 576px) {
  
   .subsidy-section {
-    padding: 20px 10px;
+    padding: 25px 10px;
   }
   
   .video-wrapper {
@@ -154,14 +154,21 @@
 /* Tablet / Mobile Adjustments */
 @media (max-width: 992px) {
   .subsidy-section .video-wrapper {
-    margin-top: 20px; /* reduce margin */
-    padding-bottom: 66.25%; /* keep 16:9 */
+   
+    padding-bottom: 56.25%; /* keep 16:9 */
   }
 }
 
 @media (max-width: 576px) {
   .subsidy-section .video-wrapper {
-    margin: 10px;
-    padding-bottom: 66.25%; /* maintain ratio */
+  
+    padding-bottom: 56.25%; /* maintain ratio */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .subsidy-section .video-wrapper {
+   
+    padding-bottom: 66.25%; /* keep 16:9 */
   }
 }

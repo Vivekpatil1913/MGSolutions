@@ -817,3 +817,331 @@ color:#ffffff;
     display: none;
   }
 }
+@media (max-width: 991px) {
+  .gov-nav .nav-link {
+    width: 100%;
+    white-space: nowrap;        /* keep in one line */
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* center text */
+    gap: 6px;
+    padding: 10px 14px !important;
+    font-size: 15px;
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+
+  /* ACTIVE LINK (small white pill) */
+  .gov-nav .nav-link.active {
+    background: #ffffff;
+    color: #3D63AA !important;
+    font-weight: 600;
+    padding: 6px 14px !important;   /* 👈 smaller height */
+    border-radius: 6px;
+  }
+}
+
+
+
+
+
+
+/* ========================= */
+/* MOBILE FIXES ONLY (≤ 991px) */
+/* ========================= */
+@media (max-width: 991px) {
+
+  /* Mobile logo left, toggle right */
+  .mobile-navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 36px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    z-index: 1002;
+  }
+
+  /* Hide topbar logo on mobile */
+  .gov-topbar .gov-brand {
+    display: none;
+  }
+
+  /* Navbar collapse */
+  .gov-navbar .collapse {
+    display: block !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .gov-navbar .collapse.show {
+    max-height: 520px;
+    opacity: 1;
+  }
+
+  /* Center nav links */
+  .gov-nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    gap: 4px;
+  }
+
+  /* Nav links style */
+  .gov-nav .nav-link,
+  .gov-nav .dropdown-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px 14px !important;
+    font-size: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Active link pill */
+  .gov-nav .nav-link.active,
+  .gov-nav .dropdown.show > .nav-link {
+    background: #ffffff;
+    color: #3D63AA !important;
+    font-weight: 600;
+    padding: 6px 12px !important; /* smaller box */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: fit-content;
+    margin: 4px auto; /* center horizontally */
+    text-align: center;
+  }
+
+  /* Dropdown menu mobile */
+  .gov-nav .dropdown-menu {
+    width: 100%;
+    position: relative !important;
+    background: #ffffff;
+    padding-left: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Submenu */
+  .dropdown-submenu .submenu-menu {
+    position: relative;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .dropdown-submenu.show > .submenu-menu {
+    max-height: 500px;
+  }
+
+  /* Submenu arrow rotation */
+  .dropdown-submenu > .submenu-title .submenu-arrow {
+    transition: transform 0.35s ease;
+  }
+
+  .dropdown-submenu.show > .submenu-title .submenu-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Ensure dropdown icon size */
+  .gov-nav .dropdown-icon {
+    font-size: 16px;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Keep text & icon inline */
+  .gov-nav .nav-link,
+  .gov-nav .dropdown-toggle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+/* ===== MOBILE SUBMENU CLICK FIX ===== */
+@media (max-width: 991px) {
+
+  /* Disable hover behavior on mobile */
+  .dropdown-submenu:hover > .submenu-menu {
+    display: none;
+  }
+
+  /* Enable click-based submenu */
+  .dropdown-submenu .submenu-menu {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .dropdown-submenu.show > .submenu-menu {
+    max-height: 500px;
+  }
+
+  /* Make submenu title tappable */
+  .submenu-title {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Arrow rotation */
+  .dropdown-submenu.show .submenu-arrow {
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 991px) {
+
+  /* Disable hover behavior */
+  .dropdown-submenu:hover > .submenu-menu {
+    display: none;
+  }
+
+  /* Click-based submenu */
+  .dropdown-submenu .submenu-menu {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    position: relative;
+  }
+
+  .dropdown-submenu.show > .submenu-menu {
+    max-height: 500px;
+  }
+
+  .submenu-title {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .dropdown-submenu.show .submenu-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* ================================= */
+/* MOBILE ONLY – SIMPLE SUBMENU OPEN */
+/* ================================= */
+@media (max-width: 991px) {
+
+  /* Make submenu visible on hover & tap */
+  .dropdown-submenu .submenu-menu {
+    display: none;
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    padding: 0;
+  }
+
+  /* Hover OR tap (mobile long-press acts as hover) */
+  .dropdown-submenu:hover > .submenu-menu,
+  .dropdown-submenu:focus-within > .submenu-menu {
+    display: block;
+  }
+
+  /* Make title clearly tappable */
+  .submenu-title {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Arrow rotate on open */
+  .dropdown-submenu:hover .submenu-arrow,
+  .dropdown-submenu:focus-within .submenu-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Prevent Bootstrap from closing dropdown */
+  .dropdown-menu {
+    pointer-events: auto;
+  }
+}
+/* =============================== */
+/* MOBILE – FIX DROPDOWN INVISIBLE */
+/* =============================== */
+@media (max-width: 991px) {
+
+  /* Ensure dropdown toggle text is visible */
+  .gov-nav .dropdown-toggle {
+    color: #ffffff !important;
+  }
+
+  /* When dropdown is open */
+  .gov-nav .dropdown.show > .dropdown-toggle {
+    background: #ffffff;
+    color: #3D63AA !important;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 4px auto;
+  }
+
+  /* Keep arrow visible */
+  .gov-nav .dropdown.show .dropdown-icon {
+    color: #3D63AA !important;
+  }
+}
+/* ===== FINAL MOBILE CLICK FIX ===== */
+@media (max-width: 991px) {
+
+  /* Prevent Bootstrap from closing dropdown on submenu click */
+  .dropdown-menu {
+    pointer-events: auto;
+  }
+
+  /* Ensure submenu stays visible */
+  .dropdown-submenu .submenu-menu {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .dropdown-submenu.show > .submenu-menu {
+    max-height: 500px;
+  }
+
+  /* Keep submenu links clickable */
+  .dropdown-submenu .submenu-menu .dropdown-item {
+    pointer-events: auto;
+  }
+}
+/* =============================== */
+/* TABLET VIEW – CENTER ACTIONS */
+/* (768px to 991px) */
+/* =============================== */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .gov-topbar-inner {
+    justify-content: center;   /* center content */
+    gap: 20px;
+  }
+
+  .gov-actions {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    gap: 24px;
+  }
+
+  .gov-call,
+  .gov-email {
+    justify-content: center;
+    font-size: 16px;
+  }
+}

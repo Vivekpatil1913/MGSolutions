@@ -28,7 +28,7 @@ const SubsidyCards = () => {
                 className="focus-btnn"
                 onClick={() => navigate("/industrial-subsidy")}
               >
-                Explore Details
+                 <span className="btn-text">Explore Details</span>
                 <span className="arroww">→</span>
               </Button>
             </div>
@@ -52,7 +52,7 @@ const SubsidyCards = () => {
                 className="focus-btnn"
                 onClick={() => navigate("/invest-in-india")}
               >
-                Explore Details
+                  <span className="btn-text">Explore Details</span>
                 <span className="arroww">→</span>
               </Button>
             </div>

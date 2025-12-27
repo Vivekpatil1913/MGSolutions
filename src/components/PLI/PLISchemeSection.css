@@ -1,6 +1,6 @@
 /* ===== Section ===== */
 .pli-section {
-  padding: 90px 20px;
+  padding: 30px 20px;
   background: #f9fafc;
 }
 
@@ -143,7 +143,7 @@
 
 @media (max-width: 576px) {
   .pli-section {
-    padding: 60px 15px;
+    padding: 30px 15px;
   }
 
   .pli-info-card {
@@ -157,5 +157,13 @@
   .pli-left p,
   .pli-info-card li {
     font-size: 15px;
+  }
+
+  .pli-hero {
+    gap: 10px;
+  }
+
+  .pli-info {
+    margin-top: 30px;
   }
 }

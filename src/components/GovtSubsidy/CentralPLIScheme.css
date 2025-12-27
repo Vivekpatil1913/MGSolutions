@@ -1,6 +1,6 @@
 /* ===== Section ===== */
 .central-pli-section {
-  padding: 90px 20px;
+  padding: 35px 20px;
   background: linear-gradient(
     180deg,
     rgba(61, 99, 170, 0.04),
@@ -149,7 +149,8 @@
 
 @media (max-width: 576px) {
   .central-pli-section {
-    padding: 60px 15px;
+    padding: 30px 15px;
+   
   }
 
   .central-pli-left {
@@ -168,5 +169,11 @@
 
   .advisory-card {
     padding: 30px;
+  
   }
+
+  .central-pli-container {
+    gap: 30px;
+  }
+  
 }

@@ -63,28 +63,7 @@ const Footer = () => {
                   isActive ? "active-footer-link" : ""
                 }
               >
-                <NavLink
-                  to="/govt-subsidy"
-                  className={({ isActive }) =>
-                    isActive ? "active-footer-link" : ""
-                  }
-                >
-                  <NavLink
-                    to="/production-linked-incentives"
-                    className={({ isActive }) =>
-                      isActive ? "active-footer-link" : ""
-                    }
-                  >
-                    <NavLink
-                      to="/detailed-project-report"
-                      className={({ isActive }) =>
-                        isActive ? "active-footer-link" : ""
-                      }
-                    >
-                      Industrial Subsidy
-                    </NavLink>
-                  </NavLink>
-                </NavLink>
+                Industrial Subsidy
               </NavLink>
             </li>
 

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "./RequestQuote.css";
 
 const RequestQuote = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -14,72 +15,151 @@ const RequestQuote = () => {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  /* ================= REGEX ================= */
+  const nameRegex = /^[A-Za-z ]+$/;
+  const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+  const mobileRegex = /^[0-9]{10}$/; // ✅ generic mobile validation
 
-    // clear error on typing
-    setErrors({ ...errors, [e.target.name]: "" });
+  /* ================= HANDLE CHANGE ================= */
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+
+    /* ---------- NAME ---------- */
+    if (name === "name") {
+      value = value.replace(/\s{2,}/g, " ");
+      if (value.startsWith(" ")) return;
+
+      setFormData((prev) => ({ ...prev, name: value }));
+
+      if (value.trim() === "") {
+        setErrors((prev) => ({ ...prev, name: "Please enter name" }));
+      } else if (!nameRegex.test(value.trim())) {
+        setErrors((prev) => ({
+          ...prev,
+          name: "Name must contain only letters",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, name: "" }));
+      }
+    }
+
+    /* ---------- EMAIL ---------- */
+    if (name === "email") {
+      value = value.toLowerCase();
+      if (value.includes(" ")) return;
+
+      setFormData((prev) => ({ ...prev, email: value }));
+
+      if (value.trim() === "") {
+        setErrors((prev) => ({ ...prev, email: "Please enter email" }));
+      } else if (!emailRegex.test(value.trim())) {
+        setErrors((prev) => ({
+          ...prev,
+          email: "Please enter a valid email",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, email: "" }));
+      }
+    }
+
+    /* ---------- CONTACT (UPDATED ONLY HERE) ---------- */
+    if (name === "contact") {
+      value = value.replace(/[^0-9]/g, ""); // numbers only
+
+      if (value.length > 10) return;
+
+      setFormData((prev) => ({ ...prev, contact: value }));
+
+      if (value === "") {
+        setErrors((prev) => ({
+          ...prev,
+          contact: "Please enter mobile number",
+        }));
+      } else if (!mobileRegex.test(value)) {
+        setErrors((prev) => ({
+          ...prev,
+          contact: "Enter a valid mobile number (10 digits)",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, contact: "" }));
+      }
+    }
+
+    /* ---------- MESSAGE ---------- */
+    if (name === "message") {
+      if (value.length > 200) return;
+
+      setFormData((prev) => ({ ...prev, message: value }));
+
+      if (value.trim() === "") {
+        setErrors((prev) => ({
+          ...prev,
+          message: "Please enter a message",
+        }));
+      } else if (value.trim().length < 10) {
+        setErrors((prev) => ({
+          ...prev,
+          message: "Message must be at least 10 characters",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, message: "" }));
+      }
+    }
   };
 
-  const validate = () => {
+  /* ================= FINAL VALIDATION ================= */
+  const validateForm = () => {
     let tempErrors = {};
 
-    // Name
-    if (!formData.name.trim()) {
-      tempErrors.name = "Please enter your name";
-    } else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
-      tempErrors.name = "Name should contain only letters";
-    }
+    if (!formData.name.trim())
+      tempErrors.name = "Please enter name";
+    else if (!nameRegex.test(formData.name.trim()))
+      tempErrors.name = "Name must contain only letters";
 
-    // Contact
-    if (!formData.contact.trim()) {
-      tempErrors.contact = "Please enter your contact number";
-    } else if (!/^[6-9]\d{9}$/.test(formData.contact)) {
-      tempErrors.contact = "Please enter a valid 10-digit mobile number";
-    }
+    if (!formData.email.trim())
+      tempErrors.email = "Please enter email";
+    else if (!emailRegex.test(formData.email.trim()))
+      tempErrors.email = "Please enter a valid email";
 
-    // Email
-    if (!formData.email.trim()) {
-      tempErrors.email = "Please enter your email";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      tempErrors.email = "Please enter a valid email address";
-    }
+    if (!formData.contact.trim())
+      tempErrors.contact = "Please enter mobile number";
+    else if (!mobileRegex.test(formData.contact.trim()))
+      tempErrors.contact = "Enter a valid mobile number (10 digits)";
 
-    // Message
-    if (!formData.message.trim()) {
-      tempErrors.message = "Please enter your message";
-    } else if (formData.message.length > 200) {
-      tempErrors.message = "Message cannot exceed 200 characters";
-    }
+    if (!formData.message.trim())
+      tempErrors.message = "Please enter a message";
+    else if (formData.message.trim().length < 10)
+      tempErrors.message = "Message must be at least 10 characters";
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
+  /* ================= SUBMIT ================= */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) return;
+    if (loading) return;
+    if (!validateForm()) return;
 
     setLoading(true);
     setSuccess(false);
 
-    // 🔹 Fake API call (2 seconds)
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
 
-      // reset form
       setFormData({
         name: "",
         contact: "",
         email: "",
         message: "",
       });
+      setErrors({});
     }, 2000);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (success) {
       const timer = setTimeout(() => setSuccess(false), 3000);
       return () => clearTimeout(timer);
@@ -90,7 +170,6 @@ const RequestQuote = () => {
     <section className="request-section">
       <Container>
         <div className="request-wrapper">
-          {/* FORM SECTION */}
           <div className="request-form">
             <h2>Request a Quote</h2>
             <p>Ready to work together? Build a project with us!</p>
@@ -108,7 +187,7 @@ const RequestQuote = () => {
               <input
                 type="text"
                 name="contact"
-                placeholder="Contact Number"
+                placeholder="Mobile Number"
                 value={formData.contact}
                 onChange={handleChange}
               />
@@ -125,10 +204,9 @@ const RequestQuote = () => {
 
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder="Message (min 10 chars)"
                 value={formData.message}
                 onChange={handleChange}
-                maxLength={200}
               ></textarea>
 
               <div className="message-meta">
@@ -146,12 +224,15 @@ const RequestQuote = () => {
                 {loading ? <span className="spinner"></span> : "Send Message"}
               </button>
             </form>
+
             {success && (
-              <div className="success-toast">✅ Message sent successfully!</div>
+              <div className="success-toast">
+                ✅ Message sent successfully!
+              </div>
             )}
           </div>
 
-          {/* INFO SECTION (UNCHANGED) */}
+          {/* INFO SECTION UNCHANGED */}
           <div className="request-info">
             <h2>Have Any Doubts?</h2>
             <h3>Talk to our subsidy experts today</h3>
@@ -159,26 +240,19 @@ const RequestQuote = () => {
             <div className="info-list">
               <div className="info-item">
                 <span className="dot"></span>
-                <p>
-                  End-to-end guidance on Central & State government subsidies.
-                </p>
+                <p>End-to-end guidance on government subsidies.</p>
               </div>
-
               <div className="info-item">
                 <span className="dot"></span>
-                <p>Transparent commission structure with zero hidden costs.</p>
+                <p>Transparent pricing with zero hidden costs.</p>
               </div>
-
               <div className="info-item">
                 <span className="dot"></span>
-                <p>
-                  Expert support for MSMEs, FPOs, startups & foreign companies.
-                </p>
+                <p>Support for MSMEs, startups & foreign companies.</p>
               </div>
-
               <div className="info-item">
                 <span className="dot"></span>
-                <p>Fast responses and personalized consultation.</p>
+                <p>Fast responses & personalized consultation.</p>
               </div>
             </div>
 

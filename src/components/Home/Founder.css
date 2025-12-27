@@ -1,125 +1,125 @@
-/* SECTION */
+/* ===== SECTION ===== */
 .founder-section {
-  padding: 60px 20px;
-  /* background: linear-gradient(180deg, rgba(61, 99, 170, 0.04), rgba(137, 197, 75, 0.06)); */
+  padding: 30px 20px 50px;
+ 
   text-align: center;
 }
 
-/* HEADING */
-.founder-heading {
-  font-size: 36px;
+/* TITLE */
+.founder-title {
+  font-size: 38px;
   font-weight: 700;
-  margin-bottom: 60px;
-  color: #3D63AA; /* primary palette color */
-  position: relative;
+  color: #3D63AA;
+  margin-bottom: 40px;
 }
 
-.founder-heading::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #89C54B; /* secondary palette color */
-  margin: 12px auto 0 auto;
-  border-radius: 2px;
-}
-
-/* GRID */
-.founder-wrapper {
+/* ROW */
+.founder-row {
   display: flex;
-  gap: 40px;
   justify-content: center;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 /* CARD */
 .founder-card {
-  background: #ffffff;
   width: 360px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  position: relative;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(61, 99, 170, 0.05) 100%
+  );
+  padding: 40px 20px 32px;
+  /* border-radius: 18px; */
+  transition: all 0.35s ease;
+  box-shadow: 0 15px 35px rgba(61, 99, 170, 0.15);
+  border: 1px solid rgba(61, 99, 170, 0.15);
 }
 
 .founder-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px);
+  /* box-shadow: 0 30px 60px rgba(61, 99, 170, 0.25); */
+  border-color: rgba(137, 197, 75, 0.6);
 }
 
-/* IMAGE */
-.founder-image {
-  width: 100%;
-  height: 320px;
-  border-radius: 20px 20px 0 0;
-  overflow: hidden;
+/* IMAGE (SQUARE) */
+.founder-img {
   position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 22px;
+  border-radius: 12px; /* 🔥 square with soft corners */
+  background: linear-gradient(135deg, #3D63AA, #89C54B);
+  padding: 4px;
 }
 
-.founder-image img {
+.founder-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  border-radius: 10px;
+  background: #ffffff;
 }
 
-.founder-card:hover .founder-image img {
-  transform: scale(1.05);
-}
-
-/* LINKEDIN FLOAT */
-.linkedin-float {
+/* LINKEDIN */
+.founder-linkedin {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
-  width: 38px;
-  height: 38px;
-  background: #0A66C2; /* LinkedIn original color */
+  bottom: -6px;
+  right: -6px;
+  width: 40px;
+  height: 40px;
+  background: #0A66C2;
   color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
+  /* box-shadow: 0 6px 15px rgba(0,0,0,0.25); */
+  opacity: 0;
   transition: all 0.3s ease;
 }
 
-.linkedin-float:hover {
+.founder-card:hover .founder-linkedin {
+  opacity: 1;
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* INFO */
-.founder-info {
-  padding: 24px 20px 28px;
-  text-align: center;
-}
-
-.founder-info h4 {
+/* TEXT */
+.founder-card h4 {
   font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #000000; /* black palette color */
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+.founder-role {
+  display: inline-block;
+  padding: 8px 22px;
+  font-size: 14px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    #D4AF37,
+    #F1C94A
+  ); /* gold */
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-.founder-info p {
-  font-size: 16px;
-  color: #3D63AA; /* primary palette color */
-  margin-bottom: 12px;
-}
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
-  .founder-wrapper { gap: 30px; }
-  .founder-card { width: 45%; }
-}
-
 @media (max-width: 768px) {
-  .founder-heading { font-size: 30px; margin-bottom: 50px; }
-  .founder-card { width: 100%; max-width: 380px; }
-  .founder-image { height: 300px; }
+  .founder-title {
+    font-size: 28px;
+  }
 }
 
-@media (max-width: 480px) {
-  .founder-image { height: 260px; }
+
+.founder-card {
+  animation: founderFadeUp 0.7s ease forwards;
+}
+.founder-card:nth-child(2) {
+  animation-delay: 0.15s;
 }

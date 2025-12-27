@@ -29,14 +29,19 @@
 .state-tab {
   background: #fff;
   border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
+
+  height: 120px;   /* 🔥 FIXED HEIGHT */
+  width: 100%;
+  max-width: none;
+
+  transition: all 0.3s ease;
 }
+
 
 .state-tab:hover {
   transform: translateY(-5px);
@@ -217,10 +222,13 @@
 .state-slider {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
   gap: 20px;
 }
+
 
 .state-tab {
   min-height: 100%;
@@ -256,10 +264,6 @@
     padding: 20px 12px;
   }
 
-  .state-slider {
-    grid-template-columns: 1fr;
-  }
-
   .state-tab {
     border-radius: 14px;
   }
@@ -284,4 +288,96 @@
     max-height: 85vh;
     overflow-y: auto;
   }
+}
+
+
+/* ===== Center last 2 State cards ===== */
+@media (min-width: 992px) {
+  .state-slider {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 9th card goes to column 2 */
+  .state-tab:nth-child(9) {
+    grid-column: 2;
+  }
+
+  /* 10th card goes to column 3 */
+  .state-tab:nth-child(10) {
+    grid-column: 3;
+  }
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 991px) {
+  .state-slider {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: STILL 2 cards per row */
+@media (max-width: 480px) {
+  .state-slider {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .state-tab {
+    height: 100px;
+    border-radius: 14px;
+  }
+}
+.state-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+@media (max-width: 480px) {
+  .state-slider-wrapper {
+    padding: 0;
+    overflow-x: hidden; /* 🔥 PREVENT SIDE SCROLL */
+  }
+
+  .state-slider {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 6px; /* small safe padding */
+  }
+
+  .state-tab {
+    width: 100%;
+    height: 96px;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .state-header {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .state-header h3 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .toggle-btn {
+    font-size: 18px;
+  }
+
+  .state-header img {
+    width: 42px;
+    height: 42px;
+  }
+}
+/* Make entire tab clickable */
+.state-tab {
+  cursor: pointer; /* 🔥 */
+}
+
+/* Optional: make + sign also show pointer */
+.toggle-btn {
+  cursor: pointer;
 }
