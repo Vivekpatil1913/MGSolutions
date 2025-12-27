@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FiPhoneCall, FiMail, FiChevronDown } from "react-icons/fi";
-import logo from "../../assets/MAIN MG Solutions Logo 1..png";
+import logo from "../../assets/MAIN MG Solutions Logo 1.png";
 import "./Header.css";
 import { NavLink, useLocation, Link } from "react-router-dom";
 import  { useState } from "react";

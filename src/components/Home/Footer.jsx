@@ -7,7 +7,7 @@ import {
   FaClock,
 } from "react-icons/fa";
 
-import logo from "../../assets/MAIN MG Solutions Logo 1..png";
+import logo from "../../assets/MAIN MG Solutions Logo 1.png";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
